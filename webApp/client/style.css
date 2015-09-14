@@ -1,0 +1,20 @@
+.main.container {
+  margin-top: 40px;
+}
+
+.ui.fixed.menu {
+  background-color: #45484D;
+}
+
+
+
+.ui.vertical.intro {
+	padding: 4em 0em;
+	background-color: #4CAF50;
+}
+
+.ui.inverted.secondary.mine {
+	margin-top: 40px;
+	padding-top: 5em;
+	background-color: #A7908D;
+}

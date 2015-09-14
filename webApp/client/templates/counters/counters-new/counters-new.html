@@ -1,0 +1,11 @@
+<template name="CountersNew">
+	<section class="ui vertical basic segment">
+		<div class="ui text container">
+			<h1 class="ui inverted header">
+				New Counter
+			</h1>
+
+			{{> quickForm collection="Users" id="insertCounterForm" type="method" meteormethod="counters.insert"}}
+		</div>
+	</section>
+</template>
