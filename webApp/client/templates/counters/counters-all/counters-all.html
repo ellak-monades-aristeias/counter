@@ -1,0 +1,15 @@
+<template name="CountersAll">
+	<section class="ui vertical segment">
+		<div class="ui container">
+			<a href="{{pathFor 'counters.new'}}" class="ui right aligned header">
+				<i class="add icon"></i>
+				<div class="content">
+					Προσθήκη
+				</div>
+			</a>
+			<div class="ui raised segment">
+			{{> tabular table=TabularTables.Users class="table table-responsive"}}
+			</div>
+		</div>
+	</section>
+</template>
