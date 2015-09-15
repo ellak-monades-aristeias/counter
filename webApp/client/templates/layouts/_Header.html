@@ -1,8 +1,8 @@
 <template name="_Header">
 	<div class="ui fixed inverted menu">
 		<div class="ui container">
-			<div href="/" class="header item">
-			dataplus HQ
+			<div href="/" class="header borderless item">
+			counter admin interface
 			</div>
 			<div class="right menu">
 				{{#if currentUser}}
@@ -24,13 +24,13 @@
 	</div>
 		<div class="ui inverted secondary pointing mine menu">
 		<div class="ui container">
-		  <a href="{{pathFor 'counters.all'}}" class="item">
+		  <a href="{{pathFor 'counters.all'}}" class="item {{isActiveRoute name='counters.all'}}">
 		    Kαταμετρητές
 		  </a>
-		  <a href="{{pathFor 'clocks.all'}}" class="item active">
+		  <a href="{{pathFor 'clocks.all'}}" class="item {{isActiveRoute name='clocks.all'}}">
 		    Υδρόμετρα
 		  </a>
-		  <a href="{{pathFor 'measurements.all'}}" class="item">
+		  <a href="{{pathFor 'measurements.all'}}" class="item {{isActiveRoute name='measurements.all'}}">
 		    Μετρήσεις
 		  </a>
 		  <div class="right menu">
