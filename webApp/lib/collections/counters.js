@@ -4,8 +4,7 @@ var Schemas = {}
 
 Schemas.User = new SimpleSchema({
     username: {
-        type: String,
-        regEx: /^[a-z0-9A-Z_]{3,15}$/
+        type: String
     },    
     emails: {
         type: [Object],
@@ -47,12 +46,12 @@ Users.attachSchema(Schemas.User);
 
 
 Meteor.users.helpers({
-  // mail: function() {
-  //   return this.emails.address;
-  // },
-  // role: function() {
-  // 	return this.roles[0];
-  // },
+  mail: function() {
+    return this.emails[0].address;
+  },
+  role: function() {
+  	return this.roles[0];
+  },
   joined: function() {
     return moment(this.createdAt).format('DD/MM/YYYY');
   }
@@ -61,18 +60,18 @@ Meteor.users.helpers({
 
 TabularTables.Users = new Tabular.Table({
 	name : "userList",
-	collection: Users,
+	collection: Meteor.users,
 	columns: [
-		// {data: "fullName()", title: "Full Name"},
         {data: "username", title: "Username"},
-        // {data: "mail()", title: "Email"},
-        // {data: "role()", title: "Role"},
+        {data: "mail()", title: "Email"},
+        {data: "role()", title: "Role"},
 		{data: "joined()", title: "Joined"},
 		// {tmpl: Meteor.isClient && Template.usrbtn}
 	],
-  allow: function(userId) {
-    return userId || Roles.userIsInRole(userId,['admin']);
-  }
+    extraFields: ['emails','roles'],
+    allow: function(userId) {
+        return userId || Roles.userIsInRole(userId,['admin']);
+    }
 });
 
 

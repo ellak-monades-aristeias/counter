@@ -1,3 +1,10 @@
+/* Global publications */
+ 
+Meteor.publish(null, function () { 
+  return Meteor.roles.find({})
+});
+
+/* *** */
 
 
 Meteor.publish('clocks.all', function (/* args */) {
