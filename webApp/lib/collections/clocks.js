@@ -19,6 +19,12 @@ Clocks.attachSchema(new SimpleSchema({
 		optional: false,
 		max: 70
 	},
+  topiki: {
+    type: String,
+    label: "Τ.Π.(Τοπική Κοινότητα)",
+    optional: true,
+    max: 70
+  },  
 	hydroMeter: {
 		type: String,
 		label: "Υδρόμετρο",
@@ -32,7 +38,22 @@ Clocks.attachSchema(new SimpleSchema({
     optional: true,
     unique: true,
     max: 50
-  },  
+  },
+  location: {
+    type: Object,
+    optional: true,
+    blackbox: true,
+    autoform: {
+        omit: true
+    }    
+  },
+  // "location.$.type": {
+  //   type: String
+  // },
+  // "location.$.coordinates": {
+  //   type: [Number],
+  //   decimal: true
+  // },  
 	timologio: {
 		type: String,
 		label: "Τιμολόγιο",
@@ -102,8 +123,34 @@ TabularTables.Clocks = new Tabular.Table({
     {data: "tel", title: "Τηλέφωνο"},
     {data: "timologio", title: "Τιμολόγιο"},
     {data: "barcode", title: "Barcode"}
-    // {tmpl: Meteor.isClient && Template.rsvpsCount},
-    // {tmpl: Meteor.isClient && Template.editBtn}
+  ],
+  allow: function(userId) {
+    return userId || Roles.userIsInRole(userId,['admin']);
+  }
+});
+
+TabularTables.ClocksForPaths = new Tabular.Table({
+  name: "ClocksForPaths",
+  collection: Clocks,
+  columns: [
+    {data: "hydroMeter", title: "Υδρόμετρο"},
+    {data: "name", title: "Ονοματεπώνυμο"},
+    {data: "address", title: "Διεύθυνση"},
+    {tmpl: Meteor.isClient && Template.addClockCheckbox},
+  ],
+  allow: function(userId) {
+    return userId || Roles.userIsInRole(userId,['admin']);
+  }
+});
+
+TabularTables.ClocksForPathsEdit = new Tabular.Table({
+  name: "ClocksForPathsEdit",
+  collection: Clocks,
+  columns: [
+    {data: "hydroMeter", title: "Υδρόμετρο"},
+    {data: "name", title: "Ονοματεπώνυμο"},
+    {data: "address", title: "Διεύθυνση"},
+    {tmpl: Meteor.isClient && Template.removeClockBtn}
   ],
   allow: function(userId) {
     return userId || Roles.userIsInRole(userId,['admin']);

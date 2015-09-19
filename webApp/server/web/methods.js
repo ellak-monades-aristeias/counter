@@ -16,15 +16,48 @@ Meteor.methods({
 			Roles.addUsersToRoles(id, opts.roles);
 		};
 
+	},
+
+	'paths.addClock': function (pathId, clockId) {
+		check(pathId, String);
+		check(clockId, String);
+		var loggedInUser = Meteor.user();
+		if (!loggedInUser) {
+			throw new Meteor.Error("not-logged-in", "You must be logged in for this action!");
+		} else { 
+			Paths.update(pathId, { $addToSet: {
+		 		clocks: clockId
+			}});
+		}
+	},
+	'paths.removeClock': function (pathId, clockId) {
+		check(pathId, String);
+		check(clockId, String);
+		var loggedInUser = Meteor.user();
+		if (!loggedInUser) {
+			throw new Meteor.Error("not-logged-in", "You must be logged in for this action!");
+		} else { 
+			Paths.update(pathId, { $pull: {
+		 		clocks: clockId
+			}});
+		}
 	}
 
 
 
-
-
-
-
-
-
-
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
