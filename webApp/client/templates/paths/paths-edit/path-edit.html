@@ -1,0 +1,12 @@
+<template name="PathsEdit">
+	<section class="ui vertical basic segment">
+		<div class="ui text container">
+			<h1 class="ui header">
+				{{name}} edit
+			</h1>
+		</div>
+		<div class="ui raised segment">
+			{{> tabular table=TabularTables.ClocksForPathsEdit selector=selector class="table table-responsive"}}
+		</div>		
+	</section>
+</template>

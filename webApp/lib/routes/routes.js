@@ -40,6 +40,27 @@ Router.route('/counters/new', {
   where: 'client'
 });
 
+Router.route('/paths', {
+  name: 'paths.all',
+  controller: 'PathsAllController',
+  action: 'action',
+  where: 'client'
+});
+
+Router.route('/paths/:_id/edit', {
+  name: 'paths.edit',
+  controller: 'PathsDetailsController',
+  action: 'edit',
+  where: 'client'
+});
+
+Router.route('/paths/:_id/addclocks', {
+  name: 'paths.addclocks',
+  controller: 'PathsDetailsController',
+  action: 'addClock',
+  where: 'client'
+});
+
 Router.route('/measurements', {
   name: 'measurements.all',
   controller: 'MeasurementsAllController',
