@@ -19,6 +19,12 @@ Clocks.attachSchema(new SimpleSchema({
 		optional: false,
 		max: 70
 	},
+  topiki: {
+    type: String,
+    label: "Τ.Π.(Τοπική Κοινότητα)",
+    optional: true,
+    max: 70
+  },  
 	hydroMeter: {
 		type: String,
 		label: "Υδρόμετρο",
@@ -32,7 +38,22 @@ Clocks.attachSchema(new SimpleSchema({
     optional: true,
     unique: true,
     max: 50
-  },  
+  },
+  location: {
+    type: Object,
+    optional: true,
+    blackbox: true,
+    autoform: {
+        omit: true
+    }    
+  },
+  // "location.$.type": {
+  //   type: String
+  // },
+  // "location.$.coordinates": {
+  //   type: [Number],
+  //   decimal: true
+  // },  
 	timologio: {
 		type: String,
 		label: "Τιμολόγιο",
