@@ -14,6 +14,7 @@ iron:router
 zimme:active-route
 aldeed:collection2
 dburles:collection-helpers
+matb33:collection-hooks
 
 accounts-password
 useraccounts:semantic-ui
