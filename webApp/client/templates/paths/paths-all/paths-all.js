@@ -6,7 +6,7 @@ Template.PathsAll.onCreated(function () {
 
 
 Template.PathsAll.onRendered(function () {
-	console.log("paths rendered");
+	// console.log("paths rendered");
 });
 
 Template.PathsAll.helpers({
