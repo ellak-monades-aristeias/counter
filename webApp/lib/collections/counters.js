@@ -55,7 +55,7 @@ Meteor.users.helpers({
   joined: function() {
     return moment(this.createdAt).format('DD/MM/YYYY');
   }
- });
+});
 
 
 TabularTables.Users = new Tabular.Table({
@@ -65,7 +65,7 @@ TabularTables.Users = new Tabular.Table({
         {data: "username", title: "Username"},
         {data: "mail()", title: "Email"},
         {data: "role()", title: "Role"},
-		{data: "joined()", title: "Joined"},
+		{data: "joined()", title: "Joined"}
 		// {tmpl: Meteor.isClient && Template.usrbtn}
 	],
     extraFields: ['emails','roles'],

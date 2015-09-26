@@ -15,6 +15,11 @@ Meteor.publish('clocks.all', function (/* args */) {
     }
 });
 
+Meteor.publish('clocks.one', function (id) {
+    check(id,String);
+    return Clocks.find({_id: id});
+});
+
 Meteor.publish('counters.all', function (/* args */) {
     if (this.userId || Roles.userIsInRole(this.userId,['admin'])) {
         return Meteor.users.find();
