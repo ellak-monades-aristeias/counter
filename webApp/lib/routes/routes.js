@@ -26,6 +26,13 @@ Router.route('/clocks/new', {
   where: 'client'
 });
 
+Router.route('/clocks/:_id/edit', {
+  name: 'clocks.edit',
+  controller: 'ClocksDetailsController',
+  action: 'edit',
+  where: 'client'
+});
+
 Router.route('/counters', {
   name: 'counters.all',
   controller: 'CountersAllController',
@@ -67,3 +74,35 @@ Router.route('/measurements', {
   action: 'action',
   where: 'client'
 });
+
+
+Router.route('/comments', {
+  name: 'comments',
+  action: function () {
+    this.render('Comments');
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

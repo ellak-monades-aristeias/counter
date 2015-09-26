@@ -24,7 +24,6 @@ Meteor.methods({
 		console.log(loc);
 
 		Clocks.update({hydroMeter: opts.hydroMeter}, { $set: { location: loc}}, {validate: false});		
-		Clocks.update({hydroMeter: opts.hydroMeter}, { $set: { tel: "lolo"}});		
 
 		var counter = this.userId;
 
