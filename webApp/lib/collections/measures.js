@@ -1,5 +1,10 @@
 Measurements = new Mongo.Collection("measurements");
 
+Measurements.before.insert(function (userId, doc) {
+  doc.createdAt = new Date;
+  doc.counter = userId;
+});
+
 if (Meteor.isServer) {
   Measurements.allow({
     insert: function (userId, doc) {
@@ -43,9 +48,9 @@ TabularTables.Measurements = new Tabular.Table({
     },
     {data: "value", title: "Τιμή"},
     {data: "hydroMeter", title: "Υδρόμετρο"},
-    {data: "failure", title: "Αποτυχία"},
-    {data: "failureOption", title: "Λόγος αποτυχίας"},
-    {data: "failureText", title: "Παρατήρηση"}
+    {data: "failure", title: "Αποτυχία"}
+    // {data: "failureOption", title: "Λόγος αποτυχίας"},
+    // {data: "failureText", title: "Παρατήρηση"}
   ],
   allow: function(userId) {
     return userId || Roles.userIsInRole(userId,['admin']);
