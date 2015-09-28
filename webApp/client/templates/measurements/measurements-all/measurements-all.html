@@ -1,14 +1,8 @@
 <template name="MeasurementsAll">
 	<section class="ui vertical segment">
 		<div class="ui container">
-<!-- 			<a href="{{pathFor 'clocks.new'}}" class="ui right aligned header">
-				<i class="add icon"></i>
-				<div class="content">
-					Προσθήκη
-				</div>
-			</a> -->
-			<div class="ui raised segment">
-			{{> tabular table=TabularTables.Measurements class="table table-responsive"}}
+			<div class="ui raised overflow segment">
+				{{> tabular table=TabularTables.Measurements class="table table-responsive"}}
 			</div>
 		</div>
 	</section>

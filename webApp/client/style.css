@@ -6,8 +6,6 @@
   background-color: #45484D;
 }
 
-
-
 .ui.vertical.intro {
 	padding: 4em 0em;
 	background-color: #4CAF50;
@@ -17,4 +15,18 @@
 	margin-top: 40px;
 	padding-top: 5em;
 	background-color: #A7908D;
+}
+
+
+
+.raised.overflow.segment {
+	overflow-y: hidden;
+	overflow-x: auto;
+}
+
+.ui.no-padd.segment {
+	padding-bottom: 0px;
+	padding-right: 0px;
+	margin-bottom: 0px;
+	margin-right: 0px;
 }

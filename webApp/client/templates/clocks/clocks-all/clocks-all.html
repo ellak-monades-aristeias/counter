@@ -1,14 +1,14 @@
 <template name="ClocksAll">
-	<section class="ui vertical segment">
+	<section class="ui basic no-padd right aligned segment">
+		<a href="{{pathFor 'clocks.new'}}" class="ui icon green big basic button">
+			<i class="add icon"></i>
+			Nέο
+		</a>
+	</section>
+	<section class="ui vertical segment">		
 		<div class="ui container">
-			<a href="{{pathFor 'clocks.new'}}" class="ui right aligned header">
-				<i class="add icon"></i>
-				<div class="content">
-					Προσθήκη
-				</div>
-			</a>
-			<div class="ui raised segment">
-			{{> tabular table=TabularTables.Clocks class="table table-responsive"}}
+			<div class="ui raised overflow segment">
+				{{> tabular table=TabularTables.Clocks class="table table-responsive responsive"}}
 			</div>
 		</div>
 	</section>

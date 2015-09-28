@@ -115,6 +115,7 @@ Meteor.isClient && Template.registerHelper('TabularTables', TabularTables);
 
 TabularTables.Clocks = new Tabular.Table({
   name: "ClocksList",
+  autoWidth: false,
   collection: Clocks,
   columns: [
     // {
@@ -148,6 +149,7 @@ TabularTables.Clocks = new Tabular.Table({
 
 TabularTables.ClocksForPaths = new Tabular.Table({
   name: "ClocksForPaths",
+  autoWidth: false,
   collection: Clocks,
   columns: [
     {data: "hydroMeter", title: "Υδρόμετρο"},
@@ -164,6 +166,7 @@ TabularTables.ClocksForPaths = new Tabular.Table({
 
 TabularTables.ClocksForPathsEdit = new Tabular.Table({
   name: "ClocksForPathsEdit",
+  autoWidth: false,
   collection: Clocks,
   columns: [
     {data: "hydroMeter", title: "Υδρόμετρο"},
