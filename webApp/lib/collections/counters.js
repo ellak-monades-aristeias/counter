@@ -60,6 +60,7 @@ Meteor.users.helpers({
 
 TabularTables.Users = new Tabular.Table({
 	name : "userList",
+    autoWidth: false,
 	collection: Meteor.users,
 	columns: [
         {data: "username", title: "Username"},

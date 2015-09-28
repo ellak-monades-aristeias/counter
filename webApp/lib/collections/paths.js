@@ -54,6 +54,7 @@ Paths.helpers({
 
 TabularTables.Paths = new Tabular.Table({
   name: "PathsList",
+  autoWidth: false,
   collection: Paths,
   columns: [
   //   {

@@ -68,6 +68,7 @@ if (Meteor.isServer) {
 
 TabularTables.Comments = new Tabular.Table({
   name : "commentList",
+  autoWidth: false,
   collection: Comments,
   columns: [
     {data: "getAuthor()", title: "Χρήστης"},

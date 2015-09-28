@@ -37,6 +37,7 @@ if (Meteor.isServer) {
 
 TabularTables.Measurements = new Tabular.Table({
   name: "MeasurementsList",
+  autoWidth: false,
   collection: Measurements,
   columns: [
     {
