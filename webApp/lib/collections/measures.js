@@ -26,7 +26,7 @@ if (Meteor.isServer) {
     },
 
     update: function (userId, doc, fieldNames, modifier) {
-      return true;
+      return false;
     },
 
     remove: function (userId, doc) {
@@ -50,8 +50,6 @@ TabularTables.Measurements = new Tabular.Table({
     {data: "value", title: "Τιμή"},
     {data: "hydroMeter", title: "Υδρόμετρο"},
     {data: "failure", title: "Αποτυχία"}
-    // {data: "failureOption", title: "Λόγος αποτυχίας"},
-    // {data: "failureText", title: "Παρατήρηση"}
   ],
   allow: function(userId) {
     return userId || Roles.userIsInRole(userId,['admin']);

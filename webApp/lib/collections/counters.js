@@ -35,7 +35,14 @@ Schemas.User = new SimpleSchema({
     },
     roles: {
         type: [String],
-        optional: true
+        optional: true,
+        allowedValues: ['admin', 'counter'],
+        autoform: {
+          options: [
+            {label: "ΔΙΑΧΕΙΡΗΣΤΗΣ", value: 'admin'},
+            {label: "ΚΑΤΑΜΕΤΡΗΤΗΣ", value: 'counter'}
+          ]
+        }        
     }
 
 });

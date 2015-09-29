@@ -73,7 +73,7 @@ Clocks.attachSchema(new SimpleSchema({
 		    {label: "ΕΠΑΓΓΕΛΜΑΤΙΚΟ", value: "ΕΠΑΓΓΕΛΜΑΤΙΚΟ"}
 		  ]
 		}
-	}	
+	}
 }));
 
 
