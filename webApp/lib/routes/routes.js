@@ -85,7 +85,9 @@ Router.route('/comments', {
 
 
 
-
+Router.plugin('ensureSignedIn', {
+    except: ['home', 'atSignUp']
+});
 
 
 

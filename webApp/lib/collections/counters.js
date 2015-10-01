@@ -34,7 +34,7 @@ Schemas.User = new SimpleSchema({
         }
     },
     roles: {
-        type: [String],
+        type: String,
         optional: true,
         allowedValues: ['admin', 'counter'],
         autoform: {

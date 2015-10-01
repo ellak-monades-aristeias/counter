@@ -9,7 +9,9 @@ Meteor.publish('path&clocks', function (id) {
 
 	var clocks = pth.clocks || []; // array of clocks id
 
-    return [ Paths.find({_id: id},{ fields: { name:1 } }),
+	//Paths.find({_id: id},{ fields: { name:1 } })
+
+    return [ Paths.find({_id: id}),
     		 Clocks.find({_id: {$in: clocks}},
     					 {fields: {hydroMeter:1, barcode:1, pathcode: 1, name:1, location: 1} }) ]
 });
