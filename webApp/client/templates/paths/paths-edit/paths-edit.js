@@ -13,7 +13,6 @@ Template.PathsEdit.helpers({
 Template.PathsEdit.events({
 	'click [data-action="editPathName"]': function(evt, tmpl) {
 		evt.preventDefault();
-		console.log("skat me avga")
 		editPathName.set(true);
 	}
 });

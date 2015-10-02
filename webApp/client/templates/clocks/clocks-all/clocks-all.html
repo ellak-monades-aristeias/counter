@@ -4,7 +4,19 @@
 			<i class="add icon"></i>
 			Nέο
 		</a>
+		<button data-action="showInput" class="ui icon green big basic button">
+			<i class="add icon"></i>
+			upload csv
+		</button>
 	</section>
+	{{#if showInput}}
+		<section class="ui basic no-padd right aligned segment">
+			<div class="field">
+				<label>Choose a csv file to upload</label>
+				<input type="file" id="csv-file" name="csv-file"/>
+			</div>
+		</section>
+	{{/if}}
 	<section class="ui vertical segment">		
 		<div class="ui container">
 			<div class="ui raised overflow segment">
