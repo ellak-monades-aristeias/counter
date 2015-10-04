@@ -1,0 +1,129 @@
+<template name="ClocksDetails">
+	<section class="ui basic no-padd right aligned segment">
+		<button data-action="editClock" class="ui icon green big basic button">
+			<i class="edit icon"></i>
+			edit
+		</button>
+		<button data-action="deleteClock" class="ui icon red big button">
+			<i class="delete icon"></i>
+			delete
+		</button>
+	</section>
+
+	<section class="ui vertical segment">
+		<div class="ui container">
+			<div class="ui raised segment">
+				<div class="ui three column stackable grid">
+
+					<div class="column">
+						<div class="ui basic segment">
+							<div class="sub header">Ονοματεπώνυμο/Υπόχρεος: </div>
+							<h3 class="ui header">
+								{{name}}
+							</h3>
+						</div>
+					</div>
+					<div class="column">
+						<div class="ui basic segment">
+							<div class="sub header">Τηλέφωνο: </div>
+							<h3 class="ui header">
+								{{tel}}
+							</h3>
+						</div>
+					</div>
+					<div class="column">
+						<div class="ui basic segment">
+							<div class="sub header">Διεύθυνση: </div>
+							<h3 class="ui header">
+								{{address}}
+							</h3>
+						</div>
+					</div>
+					<div class="column">
+						<div class="ui basic segment">
+							<div class="sub header">Τ.Π.(Τοπική Κοινότητα): </div>
+							<h3 class="ui header">
+								{{topiki}}
+							</h3>
+						</div>
+					</div>
+					<div class="column">
+						<div class="ui basic segment">
+							<div class="sub header">Τιμολόγιο: </div>
+							<h3 class="ui header">
+								{{timologio}}
+							</h3>
+						</div>
+					</div>					
+					<div class="column">
+						<div class="ui basic segment">
+							<div class="sub header">Υδρόμετρο: </div>
+							<h3 class="ui header">
+								{{hydroMeter}}
+							</h3>
+						</div>
+					</div>
+					<div class="column">
+						<div class="ui basic segment">
+							<div class="sub header">Κωδικός Διαδρομής: </div>
+							<h3 class="ui header">
+								{{pathcode}}
+							</h3>
+						</div>
+					</div>
+					<div class="column">
+						<div class="ui basic segment">
+							<div class="sub header">Barcode: </div>
+							<h3 class="ui header">
+								{{barcode}}
+							</h3>
+							<span class="barcode">*{{barcode}}*</span>
+						</div>						
+					</div>
+
+
+
+				</div> <!-- grid -->
+			</div>
+		</div>
+	</section>
+</template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

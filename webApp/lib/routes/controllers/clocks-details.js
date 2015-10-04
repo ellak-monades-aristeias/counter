@@ -7,11 +7,10 @@ ClocksDetailsController = RouteController.extend({
         return Clocks.findOne({_id: this.params._id});
     },
 
-    // addClock: function () {
-    //     this.render('PathsAddClocks', { /* data: {} */});
-    // },
-
     edit: function () {
         this.render('ClocksEdit', { /* data: {} */});
-    }    
+    },
+    details: function () {
+        this.render('ClocksDetails', { /* data: {} */});
+    }
 });

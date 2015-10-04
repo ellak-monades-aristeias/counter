@@ -118,21 +118,13 @@ TabularTables.Clocks = new Tabular.Table({
   autoWidth: false,
   collection: Clocks,
   columns: [
-    // {
-    //   data: "start",
-    //   title: "Date",
-    //   render: function(val, type, doc) {
-    //     return moment(val).format('DD/MM/YYYY, hh:mm a');
-    //   }
-    // },
     {data: "hydroMeter", title: "Υδρόμετρο"},
     {data: "name", title: "Ονοματεπώνυμο"},
     {data: "address", title: "Διεύθυνση"},
     {data: "topiki", title: "Τ.Π.(Τοπική Κοινότητα)"},
     {data: "pathcode", title: "Κωδικός Διαδρομής"},
-    // {data: "tel", title: "Τηλέφωνο"},
     {data: "timologio", title: "Τιμολόγιο"},
-    {data: "barcode", title: "Barcode"},
+    {tmpl: Meteor.isClient && Template.detailsClockBtn},
     {tmpl: Meteor.isClient && Template.editClockBtn}
   ],
   allow: function(userId) {

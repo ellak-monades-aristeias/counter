@@ -12,6 +12,13 @@ Measurements.after.insert(function (userId, doc) {
 Measurements.helpers({
   outcome: function () {
     return this.failure ? "Ναι" : "Όχι"; 
+  },
+  getCounter: function () {
+    var user = Meteor.users.findOne({_id:this.counter});
+    return user;
+  },
+  getClock: function () {
+    return Clocks.findOne({hydroMeter: this.hydroMeter});
   }
 });
 
@@ -59,7 +66,8 @@ TabularTables.Measurements = new Tabular.Table({
     },
     {data: "hydroMeter", title: "Υδρόμετρο"},
     {data: "value", title: "Τιμή"},
-    {data: "outcome()", title: "Αποτυχία"}
+    {data: "outcome()", title: "Αποτυχία"},
+    {tmpl: Meteor.isClient && Template.detailsBtn}
   ],
   extraFields: ['failure'],
   allow: function(userId) {

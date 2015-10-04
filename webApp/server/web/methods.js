@@ -2,8 +2,8 @@ Meteor.methods({
 
 	'counters.insert': function(opts) {
 
+		var role = opts.roles[0];
 		var mail = opts.emails[0].address;
-
 		var pass = '123456b:'
 
 		var id = Accounts.createUser({
@@ -13,7 +13,7 @@ Meteor.methods({
 		});
 
 		if (opts.roles.length > 0) {
-			Roles.addUsersToRoles(id, opts.roles);
+			Roles.addUsersToRoles(id, role);
 		};
 
 	},
@@ -30,6 +30,7 @@ Meteor.methods({
 			}});
 		}
 	},
+	
 	'paths.removeClock': function (pathId, clockId) {
 		check(pathId, String);
 		check(clockId, String);
@@ -41,6 +42,10 @@ Meteor.methods({
 		 		clocks: clockId
 			}});
 		}
+	},
+
+	'clocks.delete' : function (clockId) {
+		return Clocks.remove(clockId);
 	}
 
 });
