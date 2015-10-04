@@ -5,6 +5,16 @@ Measurements.before.insert(function (userId, doc) {
   doc.counter = userId;
 });
 
+Measurements.after.insert(function (userId, doc) {
+  Clocks.update({ hydroMeter: doc.hydroMeter, location: { $exists: false } }, { $set: { location: doc.location } });
+});
+
+Measurements.helpers({
+  outcome: function () {
+    return this.failure ? "Ναι" : "Όχι"; 
+  }
+});
+
 if (Meteor.isServer) {
   Measurements.allow({
     insert: function (userId, doc) {
@@ -47,10 +57,11 @@ TabularTables.Measurements = new Tabular.Table({
         return moment(val).format('DD/MM/YYYY, hh:mm a');
       }
     },
-    {data: "value", title: "Τιμή"},
     {data: "hydroMeter", title: "Υδρόμετρο"},
-    {data: "failure", title: "Αποτυχία"}
+    {data: "value", title: "Τιμή"},
+    {data: "outcome()", title: "Αποτυχία"}
   ],
+  extraFields: ['failure'],
   allow: function(userId) {
     return userId || Roles.userIsInRole(userId,['admin']);
   }
