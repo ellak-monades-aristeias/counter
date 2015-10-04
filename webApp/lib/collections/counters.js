@@ -34,16 +34,16 @@ Schemas.User = new SimpleSchema({
         }
     },
     roles: {
-        type: String,
+        type: [String],
         optional: true,
-        allowedValues: ['admin', 'counter'],
+        allowedValues: ["admin", "counter"],
         autoform: {
           options: [
-            {label: "ΔΙΑΧΕΙΡΗΣΤΗΣ", value: 'admin'},
-            {label: "ΚΑΤΑΜΕΤΡΗΤΗΣ", value: 'counter'}
+            {label: "ΔΙΑΧΕΙΡΗΣΤΗΣ", value: "admin"},
+            {label: "ΚΑΤΑΜΕΤΡΗΤΗΣ", value: "counter"}
           ]
         }        
-    }
+    }    
 
 });
 
@@ -83,15 +83,7 @@ TabularTables.Users = new Tabular.Table({
 });
 
 
-// if (Meteor.isServer) {
 
-//   Meteor.users.deny({
-//     update: function() {
-//       return true;
-//     }
-//   });
-
-// }
 
 
 

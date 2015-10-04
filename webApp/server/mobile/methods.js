@@ -1,4 +1,5 @@
 Meteor.methods({
+
 	'fetchClockByBarcode': function (barcode) {
 		var clock = Clocks.findOne({barcode: barcode},
 								   {fields: {hydroMeter:1, barcode:1, pathcode: 1, name:1, location: 1}});
@@ -15,43 +16,20 @@ Meteor.methods({
 
 	'measurements.insert': function (opts) {
 
-		var loc = opts.location;
-		console.log(loc);
+		console.log("opts");
+		console.log(opts);
 
-		Clocks.update({hydroMeter: opts.hydroMeter}, { $set: { location: loc}}, {validate: false});		
-
-		// var counter = this.userId;
-
-		return Measurements.insert({
-			hydroMeter: opts.hydroMeter,
-			failure: opts.failure,
-			value: opts.value,
-			location: opts.location
-		});
+		return Measurements.insert(opts);
 	},
+
 	'measurements.insert.failure': function (opts) {
 
+		console.log("opts");
+		console.log(opts);
 
-		// return Measurements.insert({
-		// 	hydroMeter: opts.hydroMeter,
-		// 	failure: opts.failure,
-		// 	failureOption: opts.failureOption,
-		// 	failureText: opts.failureText
-		// });
-
-
-
-		var failureDetails = {
-			failureOption: opts.failureOption,
-			failureText: opts.failureText			
-		}
-
-		return Measurements.insert({
-			hydroMeter: opts.hydroMeter,
-			failure: opts.failure,
-			failureDetails: failureDetails
-		});		
+		return Measurements.insert(opts);	
 	},
+
 	'comments.insert': function(text) {
 		check(text, String);
 		return Comments.insert({text: text});

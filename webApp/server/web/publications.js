@@ -20,17 +20,33 @@ Meteor.publish('clocks.one', function (id) {
     return Clocks.find({_id: id});
 });
 
-Meteor.publish('counters.all', function (/* args */) {
+// Meteor.publish('counters.all', function (/* args */) {
+//     if (this.userId || Roles.userIsInRole(this.userId,['admin'])) {
+//         return Meteor.users.find();
+//     } else {
+//         this.ready();
+//     }
+// });
+
+Meteor.publish('measurements.all', function (/* args */) {
     if (this.userId || Roles.userIsInRole(this.userId,['admin'])) {
-        return Meteor.users.find();
+        return Measurements.find();
     } else {
         this.ready();
     }
 });
 
+Meteor.publish('measurements.one', function (id) {
+    check(id,String);
+    // var clockId = Measurements.findOne({_id: id}).getClock()._id;
+    var measurement = Measurements.find({_id: id}).fetch();
+    var h = measurement.hydroMeter;
 
-Meteor.publish('measurements.all', function (/* args */) {
-    return Measurements.find();
+    if (this.userId || Roles.userIsInRole(this.userId,['admin'])) {
+        return [Measurements.find({_id: id}), Clocks.find({hydroMeter: h})]
+    } else {
+        this.ready();
+    }
 });
 
 
@@ -40,6 +56,10 @@ Meteor.publish('clocks.test', function (/* args */) {
 
 Meteor.publish('paths.one', function (id) {
     check(id,String);
-    return Paths.find({_id: id});
+    if (this.userId || Roles.userIsInRole(this.userId,['admin'])) {
+        return Paths.find({_id: id});
+    } else {
+        this.ready();
+    }
 });
 

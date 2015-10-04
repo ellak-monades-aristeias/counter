@@ -1,6 +1,5 @@
 Router.configure({
   layoutTemplate: 'Layout',
-  // controller: 'AppController',
   loadingTemplate: 'loading',
   notFoundTemplate: 'notFound'
 });
@@ -23,6 +22,13 @@ Router.route('/clocks/new', {
   name: 'clocks.new',
   controller: 'ClocksNewController',
   action: 'action',
+  where: 'client'
+});
+
+Router.route('/clocks/:_id', {
+  name: 'clocks.details',
+  controller: 'ClocksDetailsController',
+  action: 'details',
   where: 'client'
 });
 
@@ -61,7 +67,7 @@ Router.route('/paths/:_id/edit', {
   where: 'client'
 });
 
-Router.route('/paths/:_id/addclocks', {
+Router.route('/paths/:_id/add', {
   name: 'paths.addclocks',
   controller: 'PathsDetailsController',
   action: 'addClock',
@@ -71,6 +77,13 @@ Router.route('/paths/:_id/addclocks', {
 Router.route('/measurements', {
   name: 'measurements.all',
   controller: 'MeasurementsAllController',
+  action: 'action',
+  where: 'client'
+});
+
+Router.route('/measurements/:_id', {
+  name: 'measurements.details',
+  controller: 'MeasurementsDetailsController',
   action: 'action',
   where: 'client'
 });

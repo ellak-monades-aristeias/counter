@@ -1,0 +1,92 @@
+<template name="MeasurementsDetails">
+
+	<section class="ui vertical segment">
+		<div class="ui container">
+			<div class="ui raised segment">
+				<div class="ui three column grid">
+
+					<div class="column">
+						<div class="ui basic segment">
+							<div class="sub header">Ημερομηνία: </div>
+							<h3 class="ui header">
+								{{formatdate createdAt}}
+							</h3>
+						</div>
+					</div>
+					<div class="column">
+						<div class="ui basic segment">
+							<div class="sub header">Καταμετρητής: </div>
+							<h3 class="ui header">
+								{{getCounter.username}}
+							</h3>
+						</div>
+					</div>
+
+					{{#if value}}
+						<div class="column">
+							<div class="ui basic segment">
+								<div class="sub header">Τιμή: </div>
+								<h3 class="ui header">
+									{{value}}
+								</h3>
+							</div>
+						</div>
+					{{else}}
+						<div class="column">
+							<div class="ui basic segment">
+								<div class="sub header">Αποτυχής: </div>
+								<h3 class="ui header">
+									{{outcome}}
+								</h3>
+							</div>
+						</div>
+						<div class="column">
+							<div class="ui basic segment">
+								<div class="sub header">Λόγος αποτυχίας: </div>
+								<h3 class="ui header">
+									{{failureDetails.failureOption}}
+								</h3>
+							</div>
+						</div>
+						{{#if failureDetails.failureText}}
+							<div class="column">
+								<div class="ui basic segment">
+									<div class="sub header">Παρατηρήσεις Αποτυχίας: </div>
+									<h3 class="ui header">
+										{{failureDetails.failureText}}
+									</h3>
+								</div>
+							</div>
+						{{/if}}
+					{{/if}}					
+
+					<div class="column">
+						<div class="ui basic segment">
+							<div class="sub header">Υδρόμετρο: </div>
+							<h3 class="ui header">
+								{{getClock.hydroMeter}}
+							</h3>
+						</div>
+					</div>
+					<div class="column">
+						<div class="ui basic segment">
+							<div class="sub header">Ονοματεπώνυμο/Υπόχρεος: </div>
+							<h3 class="ui header">
+								{{getClock.name}}
+							</h3>
+						</div>
+					</div>
+					<div class="column">
+						<div class="ui basic segment">
+							<div class="sub header">Διεύθυνση: </div>
+							<h3 class="ui header">
+								{{getClock.address}}
+							</h3>
+						</div>
+					</div>
+
+				</div> <!-- grid -->
+			</div>
+		</div>
+	</section>
+</template>
