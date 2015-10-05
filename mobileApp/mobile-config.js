@@ -1,6 +1,6 @@
 App.info({
   name: 'Counter',
-  description: 'App for public ellak.',
+  description: 'App for public water utilities ellak.',
   author: 'me',
   version: '0.0.5'
 });
