@@ -2,14 +2,10 @@ Meteor.publish('paths', function () {
     return Paths.find({},{ fields: { name:1 } });
 });
 
-
 Meteor.publish('path&clocks', function (id) {
 
 	var pth = Paths.findOne({_id: id});
-
 	var clocks = pth.clocks || []; // array of clocks id
-
-	//Paths.find({_id: id},{ fields: { name:1 } })
 
     return [ Paths.find({_id: id}),
     		 Clocks.find({_id: {$in: clocks}},

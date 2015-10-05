@@ -99,7 +99,7 @@ Router.route('/comments', {
 
 
 Router.plugin('ensureSignedIn', {
-    except: ['home', 'atSignUp']
+    except: ['home', 'atSignIn']
 });
 
 

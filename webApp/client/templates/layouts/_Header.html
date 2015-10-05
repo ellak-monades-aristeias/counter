@@ -2,21 +2,22 @@
 	<div class="ui fixed inverted menu">
 		<div class="ui container">
 			<a href="/" class="header borderless item">
-			counter admin interface
+				{{title}}
 			</a>
 			<div class="right menu">
 				{{#if currentUser}}
 					<div class="borderless item">
-						{{niceName}}
+						{{currentUser.username}}
 					</div>
 					<div class="borderless item">
 						<a data-action="logout" class="logout">
+							Έξοδος
 							<i class="sign out icon white"></i>
 						</a>
 					</div>									
 				{{else}}
 					<div id="lefko" class="borderless item">
-						<a href="{{pathFor 'atSignIn' }}">sign in</a>
+						<a href="{{pathFor 'atSignIn' }}">Eίσοδος</a>
 					</div>
 				{{/if}}
 			</div>
