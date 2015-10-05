@@ -1,0 +1,41 @@
+<template name="itemDetails">
+		<div class="column">
+			<div class="ui padded basic segment">
+				<h3 class="ui header">
+					<i class="user icon"></i>
+					{{name}}
+					<div class="sub header">Όνομα</div>
+				</h3>
+				<h3 class="ui header">
+					<i class="clock icon"></i>
+					{{hydroMeter}}
+					<div class="sub header">Αριθμός υδρόμετρου</div>
+				</h3>
+				{{#if location}}
+					<h3 class="ui header"> 
+						<i class="marker icon"></i>
+						Αποθηκευμένη:  {{itemSavedLocation}}
+						<div class="sub header">Τοποθεσία</div>
+					</h3>
+				{{else}}
+					{{#if geolocationError}}
+						<h3 class="ui header">
+							{{geolocationError}}
+							<div class="sub header">Τοποθεσία</div>
+						</h3>
+					{{else}}
+						<h3 class="ui header">
+							 {{loc.lat}},{{loc.lng}}
+							<div class="sub header">Τοποθεσία</div>
+						</h3>
+					{{/if}}
+				{{/if}}
+			</div>
+		</div>	
+</template>
+
+
+
+
+
+

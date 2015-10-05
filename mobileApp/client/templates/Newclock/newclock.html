@@ -1,0 +1,32 @@
+<template name="Newclock">
+	<div class="ui grid">
+		<div class="help padded row">
+			<div class="two wide column">
+				<div class="ui page-title basic segment">
+					<a href="{{pathFor 'home'}}" class="pad-l">
+						<i class="inverted large left arrow icon"></i>
+					</a>
+				</div>
+			</div>
+			
+			<div class="twelve wide column">
+				<div class="ui page-title basic segment">
+					<h3 class="ui center aligned inverted header">							
+						<div class="content">
+							Nέος Υδρομετρητής
+						</div>
+					</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="ui container">
+		<div class="ui padded basic segment">
+			<div class="ui page-title basic segment">
+				{{> quickForm collection="Clocks" id="insertClockForm" type="insert"}}
+			</div>
+		</div>
+	</div>
+</template>
+

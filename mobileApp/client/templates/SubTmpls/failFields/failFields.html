@@ -1,0 +1,35 @@
+<template name="failFiels">
+	
+	<section class="ui basic segment">
+		<form class="ui form">
+			<div class="field">
+				<label>Επιλογή λόγου αδυναμίας</label>
+				<select class="ui dropdown" id="failure-option">
+					{{#each failureOptions}}
+					  <option>{{this}}</option>
+					{{/each}}
+				</select>
+			</div>
+			<div class="field">	
+				<label>Παρατηρήσεις αδυναμίας</label>		
+				<textarea rows="4" name="failureText" placeholder="παρατηρήσεις αδυναμίας"></textarea>
+			</div>
+			<div class="field">
+				<button class="ui basic button" data-action="photo">
+					<i class="photo icon"></i>
+					Λήψη φωτογραφίας
+				</button>
+				{{#if photo}}
+					<div class="ui fluid segment">
+						<div class="ui image">
+							<img src="{{photo}}" />
+						</div>
+					</div>
+				{{/if}}
+			</div>
+			<button type="submit" class="ui submit green button">send</button>		
+		</form>
+	</section>
+
+</template>
+

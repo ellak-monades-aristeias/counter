@@ -1,0 +1,52 @@
+<template name="Measure">
+	<div class="ui grid">
+		<div class="measure padded row">
+			<div class="column">
+				<div class="ui page-title basic segment">
+					<h3 class="ui center aligned inverted header">Μέτρηση</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+	{{#with item}}
+
+		{{> itemDetails}}
+
+		<div class="ui section divider"></div>
+		{{#unless failure}}
+
+			{{> measureFields}}
+
+			<div class="ui section divider"></div>
+	
+			<section class="ui basic segment">
+				<button class="ui big fluid negative button" data-action="fail">αδυναμία μέτρησης</button>
+			</section>
+
+		{{/unless}}
+
+		{{#if failure}}
+			<h3 class="ui center aligned red header" data-action="no-fail">
+				<i class="remove icon"></i>
+				Άκυρο
+			</h3>
+
+			{{> failFiels}}
+
+		{{/if}}		
+
+	{{else}}
+		<div class="ui section divider"></div>
+		<section class="ui intro raised segment">
+			<p>no result found!</p>
+			<a href="{{pathFor 'search'}}" class="ui big fluid blue button">try again</a>
+		</section>		
+	{{/with}}	
+</template>
+
+
+
+
+
+
+

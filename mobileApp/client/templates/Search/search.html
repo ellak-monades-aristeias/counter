@@ -1,0 +1,47 @@
+<template name="Search">
+	<div class="ui grid">
+		<div class="measure row">
+
+			<div class="two wide column">
+				<div class="ui page-title basic segment">
+					<a href="{{pathFor 'home'}}" class="pad-l">
+						<i class="inverted large left arrow icon"></i>
+					</a>
+				</div>
+			</div>
+			
+			<div class="twelve wide column">
+				<div class="ui page-title basic segment">
+					<h3 class="ui center aligned inverted header">							
+						<div class="content">
+							Αναζήτηση
+						</div>
+					</h3>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="ui container">
+
+		<div class="ui padded basic segment">
+			<h4 class="ui dividing header">σκανάρισμα barcode</h4>
+			<section class="ui basic segment">
+				<button class="ui basic big fluid blue button" data-action="scan">Scan</button>
+			</section>
+		</div>			
+
+		<div class="ui padded basic segment">
+			<h4 class="ui dividing header">Αριθμός υδρόμετρου</h4>
+			<section class="ui basic segment">
+				<div class="ui big fluid icon input">
+					<input type="text" name="clock" placeholder="Αριθμός ρολογίου">
+					<i data-action="getClock" class="search link icon"></i>
+				</div>
+			</section>
+		</div>
+					
+	</div>
+	
+</template>

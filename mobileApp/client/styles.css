@@ -1,0 +1,17 @@
+.main {
+  margin-top: 44px;
+}
+
+.page-title.segment {
+	padding-top: 2em;
+	padding-bottom: 1em;
+}
+
+.padded.basic.segment {
+	padding-top: 4em;
+	padding-bottom: 2em;
+}
+
+.pad-l {
+	margin-left: 1em;
+}
