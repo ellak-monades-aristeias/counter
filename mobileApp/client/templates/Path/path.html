@@ -1,0 +1,54 @@
+<template name="Path">
+
+	{{#with path}}
+		<div class="ui grid">
+			<div class="path row">
+
+				<div class="two wide column">
+					<div class="ui page-title basic segment">
+						<a href="{{pathFor 'paths'}}" class="pad-l">
+							<i class="inverted large left arrow icon"></i>
+						</a>
+					</div>
+				</div>
+
+				<div class="twelve wide column">
+					<div class="ui page-title basic segment">						
+						<h3 class="ui center aligned inverted header">							
+							<div class="content">
+								{{name}}
+							</div>
+						</h3>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	{{/with}}	
+
+	{{#if clocks.count}}
+		<div class="ui basic segment">
+			<div class="ui very relaxed divided list">
+				{{#each clocks}}
+					<a class="item">
+						<div class="right floated content">
+							<button class="ui button" data-action="goMeasure">measure</button>
+						</div>
+						<div class="content">
+							<div class="header">{{name}}</div>
+							<div class="description">{{hydroMeter}} - {{pathcode}}</div>
+						</div>
+					</a>			
+				{{/each}}
+			</div>
+		</div>
+
+	{{else}}
+		<section class="ui padded basic segment">
+			<h4 class="ui center aligned header">Δεν βρέθηκαν αποτελέσματα</h4>
+			<a href="{{pathFor 'paths'}}" class="ui big basic fluid blue button">πίσω</a>
+		</section>
+	{{/if}}
+
+</template>
+

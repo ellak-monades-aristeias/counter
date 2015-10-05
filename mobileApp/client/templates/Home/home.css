@@ -1,0 +1,20 @@
+.measure.row {
+	background-color: #27b0d8;
+}
+
+.path.row {
+	background-color: #2bccdc;
+}
+
+.comment.row {
+	background-color: #1ABC9C;
+}
+
+.help.row {
+	background-color: #2ecc71;
+}
+
+.intro.segment {
+	padding-top: 4em;
+	padding-bottom: 4em;
+}

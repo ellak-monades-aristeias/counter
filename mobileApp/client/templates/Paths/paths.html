@@ -1,0 +1,49 @@
+<template name="Paths">
+
+	<div class="ui grid">
+		<div class="path row">
+			<div class="two wide column">
+				<div class="ui page-title basic segment">
+					<a href="{{pathFor 'home'}}" class="pad-l">
+						<i class="inverted large left arrow icon"></i>
+					</a>
+				</div>
+			</div>
+			
+			<div class="twelve wide column">
+				<div class="ui page-title basic segment">
+					<h3 class="ui center aligned inverted header">							
+						<div class="content">
+							Δρομολόγια
+						</div>
+					</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="ui hidden divider"></div>
+
+	{{#if items.count}}	
+		<div class="ui basic segment">
+			<div class="ui very relaxed divided list">	
+				{{#each items}}
+					<a href="/path/{{_id}}" class="item">
+						<div class="right floated content">
+							<i class="right angle big icon"></i>
+						</div>
+						<div class="content">
+							<div class="header">{{name}}</div>
+						</div>
+					</a>
+				{{/each}}
+			</div>
+		</div>
+	{{else}}
+		<section class="ui padded basic segment">
+			<h4 class="ui center aligned header">Δεν βρέθηκαν αποτελέσματα</h4>
+			<a href="{{pathFor 'home'}}" class="ui big basic fluid blue button">πίσω</a>
+		</section>		
+	{{/if}}
+
+</template>
+

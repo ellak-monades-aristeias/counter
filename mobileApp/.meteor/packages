@@ -1,0 +1,38 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-platform
+reactive-dict
+reactive-var
+
+#semantic:ui
+#flemay:less-autoprefixer
+semantic:ui-css
+
+iron:router
+aldeed:collection2
+dburles:collection-helpers
+matb33:collection-hooks
+
+accounts-password
+useraccounts:semantic-ui
+useraccounts:iron-routing
+alanning:roles
+
+momentjs:moment
+msavin:mongol
+aldeed:autoform
+fabienb4:autoform-semantic-ui
+aldeed:tabular
+mdg:geolocation
+
+kevohagan:sweetalert
+
+
+mdg:camera
+ground:db
+ccorcos:subs-cache
+okgrow:router-autoscroll

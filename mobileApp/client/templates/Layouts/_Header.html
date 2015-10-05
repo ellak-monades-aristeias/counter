@@ -1,0 +1,28 @@
+<template name="_Header">
+	<div class="ui top fixed inverted menu">
+		<div class="ui container">
+			<a href="/" class="header borderless item">Counter</a>
+
+			{{#unless connected}}
+				<div class="connected borderless item">
+					<i class="circle icon red"></i>
+					έκτος σύνδεσης
+				</div>
+			{{/unless}}
+
+			<div class="ui inverted right aligned menu">
+				{{#if currentUser}}
+					<div class="borderless item">
+						<a href="{{pathFor 'user'}}" class="logout">
+							<i class="user icon white"></i>
+						</a>
+					</div>					
+				{{else}}
+				<div class="item">
+					<a href="{{pathFor 'atSignIn' }}">είσοδος</a>
+				</div>	
+				{{/if}}
+			</div>
+		</div>
+	</div>
+</template>

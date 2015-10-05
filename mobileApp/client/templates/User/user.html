@@ -1,0 +1,43 @@
+<template name="User">
+	<div class="ui grid">
+		<div class="measure row">
+
+			<div class="two wide column">
+				<div class="ui page-title basic segment">
+					<a href="{{pathFor 'home'}}" class="pad-l">
+						<i class="inverted large left arrow icon"></i>
+					</a>
+				</div>
+			</div>
+			
+			<div class="twelve wide column">
+				<div class="ui page-title basic segment">
+					<h3 class="ui center aligned inverted header">							
+						<div class="content">
+							{{user.username}}
+						</div>
+					</h3>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="ui container">
+
+		<div class="ui padded basic segment">
+			<section class="ui basic segment">
+				<button class="ui basic big fluid blue button" data-action="logout">Έξοδος</button>
+			</section>
+		</div>			
+
+		<div class="ui padded basic segment">
+			<h4 class="ui dividing header">Αλλαγή κωδικού πρόσβασης</h4>
+			<section class="ui basic segment">
+				<a href="{{pathFor 'atChangePwd'}}" class="ui basic big fluid blue button" data-action="">Αλλαγή</a>
+			</section>
+		</div>
+					
+	</div>
+	
+</template>

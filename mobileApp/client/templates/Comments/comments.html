@@ -1,0 +1,38 @@
+<template name="Comments">
+	<div class="ui grid">
+		<div class="comment row">
+			<div class="two wide column">
+				<div class="ui page-title basic segment">
+					<a href="{{pathFor 'home'}}" class="pad-l">
+						<i class="inverted large left arrow icon"></i>
+					</a>
+				</div>
+			</div>
+
+			<div class="twelve wide column">
+				<div class="ui page-title basic segment">						
+					<h3 class="ui center aligned inverted header">							
+						<div class="content">
+							Σχόλιο
+						</div>
+					</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="ui container">
+		<div class="ui padded basic segment">
+			<form class="ui form">
+				<div class="field">
+					<label>Σχόλιο</label>
+					<textarea name="text" rows=6></textarea>
+				</div>
+				<div class="ui hidden divider"></div>
+				<button type="submit" class="ui big submit blue button">Αποστολή</button>
+			</form>
+		</div>
+	</div>
+
+</template>
+
