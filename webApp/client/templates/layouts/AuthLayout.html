@@ -1,34 +1,12 @@
 <template name="AuthLayout">
-	
-	<!-- {{> _Header}} -->
-
 
 	<div class="ui fixed inverted menu">
 		<div class="ui container">
 			<a href="/" class="header borderless item">
-				Hydro Counter
+				{{title}}
 			</a>
-
-<!-- 			<div class="right menu">
-				{{#if currentUser}}
-					<div class="borderless item">
-						{{niceName}}
-					</div>
-					<div class="borderless item">
-						<a data-action="logout" class="logout">
-							<i class="sign out icon white"></i>
-						</a>
-					</div>									
-				{{else}}
-					<div id="lefko" class="borderless item">
-						<a href="{{pathFor 'atSignIn' }}">sign in</a>
-					</div>
-				{{/if}}
-			</div> -->
-
 		</div>
 	</div>
-
 
 	<div class="ui text auth container">
 		{{> yield}}

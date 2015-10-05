@@ -5,3 +5,10 @@ Template._Header.events({
     console.log('bitch!')
   }
 });
+
+Template._Header.helpers({
+	title: function () {
+		var t = Meteor.settings.public.TITLE;
+		return t || 'Counter Admin Interface';
+	}
+});
