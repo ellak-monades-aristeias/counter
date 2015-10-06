@@ -96,6 +96,12 @@ Router.route('/comments', {
   }
 });
 
+Router.route('/comments/:_id', {
+  name: 'comments.details',
+  controller: 'CommentsDetailsController',
+  action: 'action'
+});
+
 
 
 Router.plugin('ensureSignedIn', {

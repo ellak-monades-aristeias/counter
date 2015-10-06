@@ -1,0 +1,87 @@
+<template name="CommentsDetails">
+	<section class="ui basic no-padd right aligned segment">
+		<button data-action="deleteComment" class="ui icon red big button">
+			<i class="delete icon"></i>
+			delete
+		</button>
+	</section>
+
+	<section class="ui vertical segment">
+		<div class="ui container">
+			<div class="ui raised segment">
+				<div class="ui three column stackable grid">
+
+					<div class="column">
+						<div class="ui basic segment">
+							<div class="sub header">Ημερομηνία: </div>
+							<h3 class="ui header">
+								{{formatdate createdAt}}
+							</h3>
+						</div>
+					</div>
+					<div class="column">
+						<div class="ui basic segment">
+							<div class="sub header">Χρήστης: </div>
+							<h3 class="ui header">
+								{{getAuthor}}
+							</h3>
+						</div>
+					</div>
+					<div class="row">
+						<div class="sixteen wide column">
+							<div class="ui basic segment">
+								<div class="sub header">Σχόλιο: </div>
+								<h3 class="ui header">
+									{{text}}
+								</h3>
+							</div>
+						</div>
+					</div>
+
+
+
+
+				</div> <!-- grid -->
+			</div>
+		</div>
+	</section>
+</template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

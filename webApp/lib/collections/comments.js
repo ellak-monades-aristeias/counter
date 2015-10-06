@@ -81,7 +81,7 @@ TabularTables.Comments = new Tabular.Table({
       }
     },        
     {data: "text", title: "Σχόλιο"},
-    // {tmpl: Meteor.isClient && Template.usrbtn}
+    {tmpl: Meteor.isClient && Template.detailsCommentsBtn}
   ],
     extraFields: ['author'],
     allow: function(userId) {

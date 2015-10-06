@@ -29,3 +29,12 @@ Meteor.publish('paths.one', function (id) {
     }
 });
 
+Meteor.publish('comments.one', function (id) {
+    check(id,String);
+    if (this.userId || Roles.userIsInRole(this.userId,['admin'])) {
+        return Comments.find({_id: id});
+    } else {
+        this.ready();
+    }
+});
+
