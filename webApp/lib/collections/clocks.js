@@ -149,7 +149,7 @@ TabularTables.ClocksForPaths = new Tabular.Table({
     {data: "address", title: "Διεύθυνση"},
     {data: "topiki", title: "Τ.Π.(Τοπική Κοινότητα)"},
     {data: "pathcode", title: "Κωδικός Διαδρομής"},    
-    {tmpl: Meteor.isClient && Template.addClockCheckbox}
+    {tmpl: Meteor.isClient && Template.addClockBtn}
   ],
   allow: function(userId) {
     return userId || Roles.userIsInRole(userId,['admin']);

@@ -38,13 +38,17 @@ Meteor.methods({
 		if (!loggedInUser) {
 			throw new Meteor.Error("not-logged-in", "You must be logged in for this action!");
 		} else { 
-			Paths.update(pathId, { $pull: {
-		 		clocks: clockId
-			}});
+			Paths.update(pathId, { $pull: { clocks: clockId }});
 		}
 	},
 
 	'clocks.delete' : function (clockId) {
+		check(clockId, String);
+		var pth = Paths.findOne({clocks: clockId});
+		if (pth) {
+			var pathId = pth._id;
+			Paths.update(pathId, { $pull: { clocks: clockId }});
+		}
 		return Clocks.remove(clockId);
 	},
 

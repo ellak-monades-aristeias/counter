@@ -1,25 +1,20 @@
 <template name="PathsAll">
-	<section class="ui vertical segment">
+	<section class="ui basic no-padd right aligned segment">
+		<button data-action="addNew" class="ui icon green big basic button">
+			<i class="add icon"></i>
+			Nέο
+		</button>
+	</section>
+	{{#if addnew}}
+		<div class="ui basic segment">
+			{{> quickForm collection="Paths" id="insertPathsForm" type="insert"}}
+		</div>
+	{{/if}}	
+	<section class="ui vertical segment">		
 		<div class="ui container">
-			{{#unless addnew}}
-
-				<a class="ui right aligned header" data-action="addNew">
-					<i class="add icon"></i>
-					<div class="content">
-						Προσθήκη
-					</div>
-				</a>
-
-			{{else}}
-
-				<div class="ui basic segment">
-					{{> quickForm collection="Paths" id="insertPathsForm" type="insert"}}
-				</div>
-
-			{{/unless}}
 			<div class="ui raised overflow segment">
 				{{> tabular table=TabularTables.Paths class="table table-responsive"}}
 			</div>
 		</div>
-	</section>
+	</section>	
 </template>
