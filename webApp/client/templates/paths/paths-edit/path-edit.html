@@ -1,18 +1,17 @@
 <template name="PathsEdit">
 	<section class="ui vertical basic segment">
 		<div class="ui container">
-			{{#unless editName}}
 				<h1 class="ui header">
-					{{name}}
 					<a data-action="editPathName">
-						<i class="edit yellow icon"></i>
+						<i class="edit green icon"></i>
 					</a>
-				</h1>
-			{{else}}
+					{{name}}  	
+				</h1>			
+			{{#if editPathName}}
 				<div class="ui basic segment">
 					{{> quickForm collection="Paths" doc=this id="updatePathNameForm" type="update"}}
 				</div>			
-			{{/unless}}
+			{{/if}}
 		</div>
 		<div class="ui raised overflow segment">
 			{{> tabular table=TabularTables.ClocksForPathsEdit selector=selector class="table table-responsive"}}

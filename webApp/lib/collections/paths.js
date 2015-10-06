@@ -57,13 +57,6 @@ TabularTables.Paths = new Tabular.Table({
   autoWidth: false,
   collection: Paths,
   columns: [
-  //   {
-  //     data: "createdAt",
-  //     title: "Ημερομηνία",
-  //     render: function(val, type, doc) {
-  //       return moment(val).format('DD/MM/YYYY, hh:mm a');
-  //     }
-  //   },
     {data: "name", title: "'Ονομα"},
     {data: "clocksLength()", title: "Αριθμός υδρόμετρων"},
     {tmpl: Meteor.isClient && Template.pathEditBtn},
