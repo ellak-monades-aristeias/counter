@@ -16,34 +16,30 @@ Template.ClocksAll.events({
 		console.log("file input fired");
 		var file = evt.target.files[0];
 
-		var clocksArray; //array of obj 
+		var clocksArray;
 
 		Papa.parse(file, {
-			header: true,
+			// header: true,
 			// dynamicTyping: true,
 			skipEmptyLines: true,
 			complete: function(results) {
 				clocksArray = results.data;
 				console.log(clocksArray);
 				_.each(clocksArray,function(c) {
-					console.log('c');
 					console.log(c);
 					var obj = {
-						hydroMeter: c.hydro,
-						name: c.name,
-						address: c.address,
-						topiki:c.tp,
-						pathcode: c.pathcode,
-						barcode: c.barcode	
+						hydroMeter: c[0],
+						name: c[1],
+						address: c[2],
+						topiki:c[3],
+						pathcode: c[4],
+						timologio: c[5],	
+						barcode: c[6]	
 					}
-					console.log('obj');
-					console.log(obj);
 					Clocks.insert(obj);
 				});
 			}	
 		});
-
-
 	}
 });
 

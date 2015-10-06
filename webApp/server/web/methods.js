@@ -46,6 +46,10 @@ Meteor.methods({
 
 	'clocks.delete' : function (clockId) {
 		return Clocks.remove(clockId);
+	},
+
+	'comments.delete' : function (commentId) {
+		return Comments.remove(commentId);
 	}
 
 });
