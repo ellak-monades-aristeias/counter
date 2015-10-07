@@ -12,6 +12,26 @@
 	padding-bottom: 2em;
 }
 
+.mt-5.basic.segment {
+	margin-top: 5px;
+}
+
 .pad-l {
 	margin-left: 1em;
+}
+
+.measure.button {
+	background-color: #27b0d8;
+}
+
+.path.button {
+	background-color: #2bccdc;
+}
+
+.comment.button {
+	background-color: #1ABC9C;
+}
+
+.help.button {
+	background-color: #2ecc71;
 }
