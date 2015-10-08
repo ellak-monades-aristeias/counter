@@ -71,8 +71,6 @@ TabularTables.Comments = new Tabular.Table({
   autoWidth: false,
   collection: Comments,
   columns: [
-    {data: "getAuthor()", title: "Χρήστης"},
-    // {data: "author", title: "Χρήστης"},
     {
       data: "createdAt",
       title: "Ημερομηνία",
@@ -80,6 +78,7 @@ TabularTables.Comments = new Tabular.Table({
         return moment(val).format('DD/MM/YYYY, hh:mm a');
       }
     },        
+    {data: "getAuthor()", title: "Χρήστης"},
     {data: "text", title: "Σχόλιο"},
     {tmpl: Meteor.isClient && Template.detailsCommentsBtn}
   ],
