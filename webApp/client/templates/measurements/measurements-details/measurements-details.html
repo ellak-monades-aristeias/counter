@@ -58,6 +58,18 @@
 								</div>
 							</div>
 						{{/if}}
+						{{#if failureDetails.failurePhoto}}
+							<div class="column">
+								<div class="ui basic segment">
+									<div class="sub header">Φωτογραφία: </div>
+									<div class="ui fluid segment">
+										<div class="ui image">
+											<img src="{{failureDetails.failurePhoto}}" />
+										</div>
+									</div>									
+								</div>
+							</div>
+						{{/if}}						
 					{{/if}}					
 
 					<div class="column">

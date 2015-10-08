@@ -70,7 +70,7 @@ Router.route('/user', {
 
 
 // Router.plugin('ensureSignedIn', {
-//     except: ['home', 'atSignUp']
+//     except: ['home', 'atSignIn']
 // });
 
 

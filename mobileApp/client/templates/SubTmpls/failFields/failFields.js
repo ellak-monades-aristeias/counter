@@ -71,7 +71,11 @@ Template.failFiels.events({
 			opts = _.extend(basicOpts, location);
 		} else {
 			opts = _.extend(basicOpts, geolocation);
-		}		
+		}
+
+		if (tmpl.PhotoDir.get('photo')) {
+			opts.failureDetails.failurePhoto = tmpl.PhotoDir.get('photo');
+		}
 
 		//Get the next Clock in the Path
 		var pathcode = this.pathcode;
