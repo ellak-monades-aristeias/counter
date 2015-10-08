@@ -6,7 +6,10 @@ Meteor.publish(null, function () {
 
 Meteor.publish('clocks.one', function (id) {
     check(id,String);
-    return Clocks.find({_id: id});
+
+    var MeasurementId = Clocks.findOne({_id: id}).getlastMeasurement()._id;
+
+    return [ Clocks.find({_id: id}), Measurements.find({_id: MeasurementId}) ];
 });
 
 Meteor.publish('measurements.one', function (id) {
@@ -14,7 +17,7 @@ Meteor.publish('measurements.one', function (id) {
     var clockId = Measurements.findOne({_id: id}).getClock()._id;
 
     if (this.userId || Roles.userIsInRole(this.userId,['admin'])) {
-        return [Measurements.find({_id: id}), Clocks.find({_id: clockId})]
+        return [ Measurements.find({_id: id}), Clocks.find({_id: clockId}) ]
     } else {
         this.ready();
     }

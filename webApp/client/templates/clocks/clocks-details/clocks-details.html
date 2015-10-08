@@ -81,6 +81,48 @@
 						</div>						
 					</div>
 
+					<div class="row">
+						<div class="sixteen wide column">
+							<h2 class="ui dividing header">Τελευταία μέτρηση</h2>
+						</div>
+					</div>
+
+					<div class="column">
+						<div class="ui basic segment">
+							<div class="sub header">Ημερομηνία: </div>
+							<h3 class="ui header">
+								{{formatdate getlastMeasurement.createdAt}}
+							</h3>
+						</div>
+					</div>
+					{{#if getlastMeasurement.value}}
+						<div class="column">
+							<div class="ui basic segment">
+								<div class="sub header">Τιμή: </div>
+								<h3 class="ui header">
+									{{getlastMeasurement.value}}
+								</h3>
+							</div>
+						</div>
+					{{else}}
+						<div class="column">
+							<div class="ui basic segment">
+								<div class="sub header">Αποτυχής: </div>
+								<h3 class="ui header">
+									{{getlastMeasurement.outcome}}
+								</h3>
+							</div>
+						</div>
+						<div class="column">
+							<div class="ui basic segment">
+								<div class="sub header">Λόγος αποτυχίας: </div>
+								<h3 class="ui header">
+									{{getlastMeasurement.failureDetails.failureOption}}
+								</h3>
+							</div>
+						</div>					
+					{{/if}}
+
 
 
 				</div> <!-- grid -->

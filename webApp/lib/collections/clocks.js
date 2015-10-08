@@ -76,6 +76,14 @@ Clocks.attachSchema(new SimpleSchema({
 	}
 }));
 
+Clocks.helpers({
+  getlastMeasurement : function () {
+    var m = Measurements.findOne({hydroMeter: this.hydroMeter},{sort: {createdAt: -1}});
+    return m;
+  }
+
+});
+
 
 if (Meteor.isServer) {
   Clocks.allow({
