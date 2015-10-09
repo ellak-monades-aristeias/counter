@@ -6,7 +6,9 @@ Measurements.before.insert(function (userId, doc) {
 });
 
 Measurements.after.insert(function (userId, doc) {
-  Clocks.update({ hydroMeter: doc.hydroMeter, location: { $exists: false } }, { $set: { location: doc.location } }, {validate: false});
+  if (doc.location) {
+    Clocks.update({ hydroMeter: doc.hydroMeter, location: { $exists: false } }, { $set: { location: doc.location } }, {validate: false});
+  }
 });
 
 Measurements.helpers({
