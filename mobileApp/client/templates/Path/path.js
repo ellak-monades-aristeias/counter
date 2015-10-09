@@ -1,8 +1,10 @@
+var PER_PAGE = 10;
+
 Template.Path.onCreated(function () {
 	var id = Router.current().params._id;
 	PathNClocks = subsCache.subscribe('path&clocks',id);
+	this.limit = new ReactiveVar(PER_PAGE);
 });
-
 
 Template.Path.helpers({
 	path: function () {
@@ -14,7 +16,8 @@ Template.Path.helpers({
 		var id = Router.current().params._id;
 		var pth = Paths.findOne({_id: id});
 		var clocks = pth.clocks || [];
-		return Clocks.find({_id: {$in: clocks}},{sort: {pathcode: 1}});
+		var instance = Template.instance
+		return Clocks.find({_id: {$in: clocks}},{sort: {pathcode: 1}, limit: Template.instance().limit.get() });
 	}
 });
 
@@ -24,6 +27,10 @@ Template.Path.events({
 		var id = this._id
 		Session.set('whereTo', 'nextClock');
 		Router.go('measure', {_id: id});
+	},
+	'click [data-action="loadmore"]': function (evt,tmpl) {
+		evt.preventDefault();
+		tmpl.limit.set(tmpl.limit.get() + PER_PAGE)
 	}
 });
 
