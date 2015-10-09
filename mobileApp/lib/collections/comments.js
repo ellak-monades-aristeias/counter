@@ -38,8 +38,7 @@ Meteor.methods({
 
 // Offline
 if (Meteor.isCordova) Ground.Collection(Comments);
-
-if ( Meteor.isClient ) Ground.methodResume(['comments.insert']);
+if (Meteor.isClient) Ground.methodResume(['comments.insert']);
 
 
 

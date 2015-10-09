@@ -11,34 +11,25 @@ Measurements.after.insert(function (userId, doc) {
   }
 });
 
-Measurements.helpers({
-  outcome: function () {
-    return this.failure ? "Ναι" : "Όχι"; 
-  },
-  getCounter: function () {
-    var user = Meteor.users.findOne({_id:this.counter});
-    return user;
-  },
-  getClock: function () {
-    return Clocks.findOne({hydroMeter: this.hydroMeter});
-  }
-});
-
 if (Meteor.isServer) {
-  Measurements.allow({
-    insert: function (userId, doc) {
-      return false;
-    },
 
-    update: function (userId, doc, fieldNames, modifier) {
-      return false;
+  Meteor.methods({  
+    'measurements.insert': function (opts) {
+      console.log("opts");
+      console.log(opts);
+      return Measurements.insert(opts);
     },
-
-    remove: function (userId, doc) {
-      return false;
+    'measurements.insert.failure': function (opts) {
+      console.log("opts");
+      console.log(opts);
+      return Measurements.insert(opts); 
     }
   });
 
+}
+
+
+if (Meteor.isServer) {
   Measurements.deny({
     insert: function (userId, doc) {
       return true;
@@ -53,6 +44,19 @@ if (Meteor.isServer) {
     }
   });
 }
+
+Measurements.helpers({
+  outcome: function () {
+    return this.failure ? "Ναι" : "Όχι"; 
+  },
+  getCounter: function () {
+    var user = Meteor.users.findOne({_id:this.counter});
+    return user;
+  },
+  getClock: function () {
+    return Clocks.findOne({hydroMeter: this.hydroMeter});
+  }
+});
 
 TabularTables.Measurements = new Tabular.Table({
   name: "MeasurementsList",

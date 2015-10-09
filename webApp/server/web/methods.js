@@ -40,20 +40,6 @@ Meteor.methods({
 		} else { 
 			Paths.update(pathId, { $pull: { clocks: clockId }});
 		}
-	},
-
-	'clocks.delete' : function (clockId) {
-		check(clockId, String);
-		var pth = Paths.findOne({clocks: clockId});
-		if (pth) {
-			var pathId = pth._id;
-			Paths.update(pathId, { $pull: { clocks: clockId }});
-		}
-		return Clocks.remove(clockId);
-	},
-
-	'comments.delete' : function (commentId) {
-		return Comments.remove(commentId);
 	}
 
 });

@@ -1,10 +1,22 @@
 Clocks = new Mongo.Collection("clocks");
 
 Clocks.attachSchema(new SimpleSchema({
-	name: {
+	firstname: {
 		type: String,
-		label: "Ονοματεπώνυμο/Υπόχρεος",
+		label: "Όνομα",
 		optional: false,
+		max: 60
+	},
+	lastname: {
+		type: String,
+		label: "Επίθετο",
+		optional: false,
+		max: 60
+	},
+	patronymo: {
+		type: String,
+		label: "Πατρώνυμο",
+		optional: true,
 		max: 60
 	},
 	tel: {
@@ -19,12 +31,12 @@ Clocks.attachSchema(new SimpleSchema({
 		optional: false,
 		max: 70
 	},
-  topiki: {
-    type: String,
-    label: "Τ.Π.(Τοπική Κοινότητα)",
-    optional: true,
-    max: 70
-  },  
+	topiki: {
+		type: String,
+		label: "Τ.Π.(Τοπική Κοινότητα)",
+		optional: true,
+		max: 70
+	},  
 	hydroMeter: {
 		type: String,
 		label: "Υδρόμετρο",
@@ -32,29 +44,28 @@ Clocks.attachSchema(new SimpleSchema({
 		unique: true,
 		max: 50
 	},
-  pathcode: {
-    type: String,
-    label: "Κωδικός Διαδρομής",
-    optional: true,
-    unique: true,
-    max: 50
-  },  
-  barcode: {
-    type: String,
-    label: "Barcode",
-    optional: true,
-    unique: true,
-    max: 50
-  },
-  location: {
-    type: Object,
-    optional: true,
-    blackbox: true,
-    autoform: {
-        omit: true
-    }    
-  },
-    
+	pathcode: {
+		type: String,
+		label: "Κωδικός Διαδρομής",
+		optional: true,
+		unique: true,
+		max: 50
+	},  
+	barcode: {
+		type: String,
+		label: "Barcode",
+		optional: true,
+		unique: true,
+		max: 50
+	},
+	location: {
+		type: Object,
+		optional: true,
+		blackbox: true,
+		autoform: {
+		    omit: true
+		}
+	},
 	timologio: {
 		type: String,
 		label: "Τιμολόγιο",
@@ -71,8 +82,16 @@ Clocks.attachSchema(new SimpleSchema({
 }));
 
 
+Meteor.methods({
+  'clocks.insert': function(opts) {
+  	console.log(opts);
+    return Clocks.insert(opts);
+  }
+});
+
 // Offline
 if (Meteor.isCordova) Ground.Collection(Clocks);
+if (Meteor.isClient) Ground.methodResume(['clocks.insert']);
 
 
 

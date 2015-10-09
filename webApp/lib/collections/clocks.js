@@ -1,12 +1,24 @@
 Clocks = new Mongo.Collection("clocks");
 
 Clocks.attachSchema(new SimpleSchema({
-	name: {
+	firstname: {
 		type: String,
-		label: "Ονοματεπώνυμο/Υπόχρεος",
+		label: "Όνομα",
 		optional: false,
 		max: 60
 	},
+  lastname: {
+    type: String,
+    label: "Επίθετο",
+    optional: false,
+    max: 60
+  },
+  patronymo: {
+    type: String,
+    label: "Πατρώνυμο",
+    optional: true,
+    max: 60
+  },
 	tel: {
 		type: String,
 		label: "Τηλέφωνο",
@@ -51,16 +63,9 @@ Clocks.attachSchema(new SimpleSchema({
     optional: true,
     blackbox: true,
     autoform: {
-        omit: true
+      omit: true
     }    
-  },
-  // "location.$.type": {
-  //   type: String
-  // },
-  // "location.$.coordinates": {
-  //   type: [Number],
-  //   decimal: true
-  // },  
+  }, 
 	timologio: {
 		type: String,
 		label: "Τιμολόγιο",
@@ -88,29 +93,33 @@ Clocks.helpers({
 if (Meteor.isServer) {
   Clocks.allow({
     insert: function (userId, doc) {
-      return true;
+      return Roles.userIsInRole(userId,['admin']);
     },
 
     update: function (userId, doc, fieldNames, modifier) {
-      return true;
+      return Roles.userIsInRole(userId,['admin']);;
     },
 
     remove: function (userId, doc) {
-      return true;
+      return false;
     }
   });
+}
 
-  Clocks.deny({
-    insert: function (userId, doc) {
-      return false;
+if (Meteor.isServer) {
+  Meteor.methods({
+    'clocks.insert': function(opts) {
+      console.log(opts);
+      return Clocks.insert(opts);
     },
-
-    update: function (userId, doc, fieldNames, modifier) {
-      return false;
-    },
-
-    remove: function (userId, doc) {
-      return false;
+    'clocks.delete' : function (clockId) {
+      check(clockId, String);
+      var pth = Paths.findOne({clocks: clockId});
+      if (pth) {
+        var pathId = pth._id;
+        Paths.update(pathId, { $pull: { clocks: clockId }});
+      }
+      return Clocks.remove(clockId);
     }
   });
 }
