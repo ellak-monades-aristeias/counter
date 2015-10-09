@@ -27,7 +27,7 @@ Comments.attachSchema(new SimpleSchema({
 Comments.helpers({
   getAuthor: function () {
     var user = Meteor.users.findOne({_id:this.author});
-    return user && user.username;
+    return user;
   }
 });
 
@@ -37,33 +37,34 @@ Comments.before.insert(function (userId, doc) {
 });
 
 if (Meteor.isServer) {
-  Comments.allow({
-    insert: function (userId, doc) {
-      return true;
-    },
-
-    update: function (userId, doc, fieldNames, modifier) {
-      return true;
-    },
-
-    remove: function (userId, doc) {
-      return true;
-    }
-  });
-
   Comments.deny({
     insert: function (userId, doc) {
-      return false;
+      return true;
     },
 
     update: function (userId, doc, fieldNames, modifier) {
-      return false;
+      return true;
     },
 
     remove: function (userId, doc) {
-      return false;
+      return true;
     }
   });
+}
+
+if (Meteor.isServer) {
+
+  Meteor.methods({  
+    'comments.insert': function(text) {
+      check(text, String);
+      return Comments.insert({text: text});
+    },
+    'comments.delete' : function (commentId) {
+      check(text, String);
+      return Comments.remove(commentId);
+    }
+  });
+
 }
 
 TabularTables.Comments = new Tabular.Table({
