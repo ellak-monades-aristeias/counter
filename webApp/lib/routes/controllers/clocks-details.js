@@ -8,9 +8,9 @@ ClocksDetailsController = RouteController.extend({
     },
 
     edit: function () {
-        this.render('ClocksEdit', { /* data: {} */});
+        this.render('ClocksEdit');
     },
     details: function () {
-        this.render('ClocksDetails', { /* data: {} */});
+        this.render('ClocksDetails');
     }
 });

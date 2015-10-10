@@ -8,10 +8,10 @@ PathsDetailsController = RouteController.extend({
     },
 
     addClock: function () {
-        this.render('PathsAddClocks', { /* data: {} */});
+        this.render('PathsAddClocks');
     },
 
     edit: function () {
-        this.render('PathsEdit', { /* data: {} */});
+        this.render('PathsEdit');
     }    
 });

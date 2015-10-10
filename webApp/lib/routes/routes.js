@@ -6,23 +6,30 @@ Router.configure({
 
 Router.route('/', {
   name: 'home',
-  controller: 'HomeController',
-  action: 'action',
-  where: 'client'
+  action: function () {
+    this.render('Home');
+  }  
 });
 
 Router.route('/clocks', {
   name: 'clocks.all',
-  controller: 'ClocksAllController',
-  action: 'action',
-  where: 'client'
+  action: function () {
+    this.render('ClocksAll');
+  }  
+});
+
+Router.route('/clocks/map', {
+  name: 'clocks.map',
+  action: function () {
+    this.render('ClocksMap');
+  }  
 });
 
 Router.route('/clocks/new', {
   name: 'clocks.new',
-  controller: 'ClocksNewController',
-  action: 'action',
-  where: 'client'
+  action: function () {
+    this.render('ClocksNew');
+  }  
 });
 
 Router.route('/clocks/:_id', {
@@ -41,23 +48,23 @@ Router.route('/clocks/:_id/edit', {
 
 Router.route('/counters', {
   name: 'counters.all',
-  controller: 'CountersAllController',
-  action: 'action',
-  where: 'client'
+  action: function () {
+    this.render('CountersAll');
+  }
 });
 
 Router.route('/counters/new', {
   name: 'counters.new',
-  controller: 'CountersNewController',
-  action: 'action',
-  where: 'client'
+  action: function () {
+    this.render('CountersNew');
+  }
 });
 
 Router.route('/paths', {
   name: 'paths.all',
-  controller: 'PathsAllController',
-  action: 'action',
-  where: 'client'
+  action: function () {
+      this.render('PathsAll');
+  }
 });
 
 Router.route('/paths/:_id/edit', {
@@ -76,9 +83,9 @@ Router.route('/paths/:_id/add', {
 
 Router.route('/measurements', {
   name: 'measurements.all',
-  controller: 'MeasurementsAllController',
-  action: 'action',
-  where: 'client'
+  action: function () {
+    this.render('MeasurementsAll');
+  }  
 });
 
 Router.route('/measurements/:_id', {

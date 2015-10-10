@@ -85,6 +85,10 @@ Clocks.helpers({
   getlastMeasurement : function () {
     var m = Measurements.findOne({hydroMeter: this.hydroMeter},{sort: {createdAt: -1}});
     return m;
+  },
+  name: function () {
+    var firstandlast = this.firstname + " " + this.lastname;
+    return this.patronymo ? firstandlast + " " + this.patronymo : firstandlast;
   }
 
 });
@@ -136,7 +140,7 @@ TabularTables.Clocks = new Tabular.Table({
   collection: Clocks,
   columns: [
     {data: "hydroMeter", title: "Υδρόμετρο"},
-    {data: "name", title: "Ονοματεπώνυμο"},
+    {data: "name()", title: "Ονοματεπώνυμο/Υπόχρεος"},
     {data: "address", title: "Διεύθυνση"},
     {data: "topiki", title: "Τ.Π.(Τοπική Κοινότητα)"},
     {data: "pathcode", title: "Κωδικός Διαδρομής"},
@@ -144,16 +148,11 @@ TabularTables.Clocks = new Tabular.Table({
     {tmpl: Meteor.isClient && Template.detailsClockBtn},
     {tmpl: Meteor.isClient && Template.editClockBtn}
   ],
+  extraFields: ['firstname','lastname','patronymo'],
   allow: function(userId) {
     return userId || Roles.userIsInRole(userId,['admin']);
   }
 });
-
-
-
-
-
-
 
 
 TabularTables.ClocksForPaths = new Tabular.Table({
@@ -162,12 +161,13 @@ TabularTables.ClocksForPaths = new Tabular.Table({
   collection: Clocks,
   columns: [
     {data: "hydroMeter", title: "Υδρόμετρο"},
-    {data: "name", title: "Ονοματεπώνυμο"},
+    {data: "name()", title: "Ονοματεπώνυμο/Υπόχρεος"},
     {data: "address", title: "Διεύθυνση"},
     {data: "topiki", title: "Τ.Π.(Τοπική Κοινότητα)"},
     {data: "pathcode", title: "Κωδικός Διαδρομής"},    
     {tmpl: Meteor.isClient && Template.addClockBtn}
   ],
+  extraFields: ['firstname','lastname','patronymo'],
   allow: function(userId) {
     return userId || Roles.userIsInRole(userId,['admin']);
   }
@@ -179,12 +179,13 @@ TabularTables.ClocksForPathsEdit = new Tabular.Table({
   collection: Clocks,
   columns: [
     {data: "hydroMeter", title: "Υδρόμετρο"},
-    {data: "name", title: "Ονοματεπώνυμο"},
+    {data: "name()", title: "Ονοματεπώνυμο/Υπόχρεος"},
     {data: "address", title: "Διεύθυνση"},
     {data: "topiki", title: "Τ.Π.(Τοπική Κοινότητα)"},
     {data: "pathcode", title: "Κωδικός Διαδρομής"},    
     {tmpl: Meteor.isClient && Template.removeClockBtn}
   ],
+  extraFields: ['firstname','lastname','patronymo'],
   allow: function(userId) {
     return userId || Roles.userIsInRole(userId,['admin']);
   }
