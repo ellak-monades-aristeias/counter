@@ -14,6 +14,25 @@
 						</div>
 					</div>
 
+					{{#unless currentUser}}
+						<div class="row">
+							<div class="sixteen wide column">
+								<div class="ui basic center aligned segment">
+									<a href="{{pathFor 'atSignIn' }}" class="ui big blue button">Είσοδος</a>
+								</div>
+							</div>
+						</div>
+					{{else}}
+						<div class="column">
+							<div class="ui basic segment">
+								<div class="sub header">Something: </div>
+								<h3 class="ui header">
+									something related
+								</h3>
+							</div>
+						</div>
+					{{/unless}}		
+
 				</div> <!-- grid -->
 			</div>
 		</div>

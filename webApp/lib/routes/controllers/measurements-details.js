@@ -8,6 +8,6 @@ MeasurementsDetailsController = RouteController.extend({
     },
 
     action: function () {
-        this.render('MeasurementsDetails', { /* data: {} */});
+        this.render('MeasurementsDetails');
     }    
 });

@@ -6,11 +6,23 @@ Meteor.publish(null, function () {
 
 Meteor.publish('clocks.one', function (id) {
     check(id,String);
-
-    var MeasurementId = Clocks.findOne({_id: id}).getlastMeasurement()._id;
+    var lastMeasurement = Clocks.findOne({_id: id}).getlastMeasurement();
+    if (lastMeasurement) {
+        var MeasurementId = lastMeasurement._id
+    }
 
     return [ Clocks.find({_id: id}), Measurements.find({_id: MeasurementId}) ];
 });
+
+
+Meteor.publish('ClocksforMap', function(bottomLeft, topRight) {
+  if (!bottomLeft && !topRight) {
+    return [];
+  }
+  clocks = Clocks.find({location: { $exists: true }, location: {$geoWithin: {$box: [bottomLeft, topRight]}}});
+  return clocks;
+});
+
 
 Meteor.publish('measurements.one', function (id) {
     check(id,String);
@@ -40,4 +52,36 @@ Meteor.publish('comments.one', function (id) {
         this.ready();
     }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

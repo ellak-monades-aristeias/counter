@@ -23,3 +23,5 @@ Meteor.startup(function() {
 
 
 }); //startup
+
+Clocks._ensureIndex({'location.coordinates': '2dsphere'});

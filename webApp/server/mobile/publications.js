@@ -9,10 +9,27 @@ Meteor.publish('path&clocks', function (id) {
 
     return [ Paths.find({_id: id}),
     		 Clocks.find({_id: {$in: clocks}},
-    					 {fields: {hydroMeter:1, barcode:1, pathcode: 1, name:1, location: 1} }) ]
+    					 {fields: {
+    					 	hydroMeter:1,
+    					 	barcode:1,
+    					 	pathcode: 1,
+    					 	firstname:1,
+    					 	lastname:1,
+    					 	patronymo:1,
+    					 	location: 1}
+    					}) 
+    		]
 });
 
 Meteor.publish('clock.one', function (id) {
     return Clocks.find({_id: id},
-					   {fields: {hydroMeter:1, barcode:1, pathcode: 1, name:1, location: 1} });
+					   {fields: {
+					   		hydroMeter:1,
+					   		barcode:1,
+					   		pathcode: 1,
+    					 	firstname:1,
+    					 	lastname:1,
+    					 	patronymo:1,					   		
+					   		location: 1} 
+					  });
 });

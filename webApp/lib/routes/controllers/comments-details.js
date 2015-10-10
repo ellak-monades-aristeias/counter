@@ -8,6 +8,6 @@ CommentsDetailsController = RouteController.extend({
     },
 
     action: function () {
-        this.render('CommentsDetails', { /* data: {} */});
+        this.render('CommentsDetails');
     }    
 });

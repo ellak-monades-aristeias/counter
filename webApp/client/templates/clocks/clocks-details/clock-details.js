@@ -1,3 +1,12 @@
+Template.ClocksDetails.helpers({
+	loc: function () {
+		var coordinates = this.location.coordinates
+
+		return coordinates && coordinates.join(',');
+	}
+});
+
+
 Template.ClocksDetails.events({
 	'click [data-action="editClock"]': function(evt, tmpl) {
 		evt.preventDefault();
