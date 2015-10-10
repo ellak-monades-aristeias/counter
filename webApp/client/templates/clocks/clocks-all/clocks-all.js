@@ -15,12 +15,9 @@ Template.ClocksAll.events({
 	'change #csv-file': function (evt,tmpl) {
 		console.log("file input fired");
 		var file = evt.target.files[0];
-
 		var clocksArray;
-
 		Papa.parse(file, {
 			// header: true,
-			// dynamicTyping: true,
 			skipEmptyLines: true,
 			complete: function(results) {
 				clocksArray = results.data;

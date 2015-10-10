@@ -80,6 +80,16 @@
 							<span class="barcode">*{{barcode}}*</span>
 						</div>						
 					</div>
+					{{#if location}}
+						<div class="column">
+							<div class="ui basic segment">
+								<div class="sub header">Τοποθεσία: </div>
+								<h3 class="ui header">
+									{{loc}}
+								</h3>
+							</div>
+						</div>
+					{{/if}}					
 
 					<div class="row">
 						<div class="sixteen wide column">
