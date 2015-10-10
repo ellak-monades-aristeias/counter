@@ -1,0 +1,7 @@
+<template name="CounterDetails">
+	<section class="ui vertical basic segment">
+		<div class="ui container">
+			{{> quickForm collection="Meteor.users" doc=this id="updateCountersForm" type="update"}}
+		</div>
+	</section>	
+</template>

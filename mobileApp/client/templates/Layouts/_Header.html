@@ -10,16 +10,16 @@
 				</div>
 			{{/unless}}
 
-			<div class="ui inverted right aligned menu">
+			<div class="ui inverted right menu">
 				{{#if currentUser}}
-					<div class="borderless item">
-						<a href="{{pathFor 'user'}}" class="logout">
+					<div class="ui borderless item">
+						<a href="{{pathFor 'user'}}">
 							<i class="user icon white"></i>
 						</a>
 					</div>					
 				{{else}}
-				<a href="{{pathFor 'atSignIn' }}" class="item">
-					είσοδος
+				<a href="{{pathFor 'atSignIn' }}" class="ui borderless item">
+					Είσοδος
 				</a>	
 				{{/if}}
 			</div>

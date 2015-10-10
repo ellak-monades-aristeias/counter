@@ -1,5 +1,17 @@
 <template name="ClocksMap">
 
+{{#if geolocationError}}
+
+	<div class="ui negative message">
+		<i class="close icon"></i>
+		<div class="header">
+			Λάθος κατα τον εντοπισμό της τοποθεσίας σας!
+		</div>
+		<p>Ενεργοποιηστε την επιλογη της τοποθεσίας του browser</p>
+	</div>
+
+{{/if}}
+
 	<section class="ui vertical segment">		
 		<div class="ui container">
 			<div class="ui raised segment">

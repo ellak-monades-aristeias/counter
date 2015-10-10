@@ -6,15 +6,23 @@
 			</a>
 			<div class="right menu">
 				{{#if currentUser}}
-					<div class="borderless item">
+					<div class="ui borderless simple dropdown item">
 						{{currentUser.username}}
+						<i class="dropdown icon"></i>
+						<div class="menu">
+							<a href="{{pathFor 'atChangePwd'}}" class="item">Αλλαγη password</a>
+							<a data-action="logout" class="item">
+								<i class="sign out icon white"></i>
+								Έξοδος
+							</a>
+						</div>						
 					</div>
-					<div class="borderless item">
+<!-- 					<div class="borderless item">
 						<a data-action="logout" class="logout">
 							Έξοδος
 							<i class="sign out icon white"></i>
 						</a>
-					</div>									
+					</div> -->									
 				{{else}}
 					<div id="lefko" class="borderless item">
 						<a href="{{pathFor 'atSignIn' }}">Eίσοδος</a>
@@ -24,28 +32,23 @@
 		</div>
 	</div>
 		<div class="ui inverted secondary pointing stackable mine menu">
-		<div class="ui container">
-		  <a href="{{pathFor 'counters.all'}}" class="item {{isActiveRoute regex='counters'}}">
-		    Kαταμετρητές
-		  </a>
-		  <a href="{{pathFor 'clocks.all'}}" class="item {{isActiveRoute regex='clocks'}}">
-		    Υδρόμετρα
-		  </a>
-		  <a href="{{pathFor 'paths.all'}}" class="item {{isActiveRoute regex='paths'}}">
-		    Δρομολόγια
-		  </a>		  
-		  <a href="{{pathFor 'measurements.all'}}" class="item {{isActiveRoute regex='measurements'}}">
-		    Μετρήσεις
-		  </a>
-		  <a href="{{pathFor 'comments'}}" class="item {{isActiveRoute regex='comments'}}">
-		    Σχόλια
-		  </a>		  
-<!-- 		  <div class="right menu">
-		    <a class="ui item">
-		      something
-		    </a>
-		  </div> -->
-		</div>
+			<div class="ui container">
+				<a href="{{pathFor 'counters.all'}}" class="item {{isActiveRoute regex='counters'}}">
+					Kαταμετρητές
+				</a>
+				<a href="{{pathFor 'clocks.all'}}" class="item {{isActiveRoute regex='clocks'}}">
+					Υδρόμετρα
+				</a>
+				<a href="{{pathFor 'paths.all'}}" class="item {{isActiveRoute regex='paths'}}">
+					Δρομολόγια
+				</a>		  
+				<a href="{{pathFor 'measurements.all'}}" class="item {{isActiveRoute regex='measurements'}}">
+					Μετρήσεις
+				</a>
+				<a href="{{pathFor 'comments'}}" class="item {{isActiveRoute regex='comments'}}">
+					Σχόλια
+				</a>
+			</div>
 		</div>
 
 </template>

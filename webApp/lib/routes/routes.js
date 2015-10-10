@@ -60,6 +60,13 @@ Router.route('/counters/new', {
   }
 });
 
+Router.route('/counters/:_id/edit', {
+  name: 'counters.edit',
+  controller: 'CountersDetailsController',
+  action: 'action',
+  where: 'client'
+});
+
 Router.route('/paths', {
   name: 'paths.all',
   action: function () {
@@ -75,7 +82,7 @@ Router.route('/paths/:_id/edit', {
 });
 
 Router.route('/paths/:_id/add', {
-  name: 'paths.addclocks',
+  name: 'paths.add',
   controller: 'PathsDetailsController',
   action: 'addClock',
   where: 'client'

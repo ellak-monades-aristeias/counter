@@ -1,18 +1,23 @@
 <template name="ClocksAll">
 	<section class="ui basic no-padd right aligned segment">
+		<a href="{{pathFor 'clocks.map'}}" class="ui icon green big basic button">
+			<i class="map icon"></i>
+			Χάρτης
+		</a>
 		<a href="{{pathFor 'clocks.new'}}" class="ui icon green big basic button">
 			<i class="add icon"></i>
 			Nέο
 		</a>
 		<button data-action="showInput" class="ui icon green big basic button">
-			<i class="add icon"></i>
-			upload csv
+			<i class="cloud upload icon"></i>
+			Αρχείο csv
 		</button>
 	</section>
 	{{#if showInput}}
-		<section class="ui basic no-padd right aligned segment">
+		<section class="ui basic segment">
+			<p>Το αρχείο θα πρεπει να εχει τις ακόλουθες στηλες με αυτην την σειρα και μονο.Δεν πρεπει να έχει στην σειρα με τους τίτλους</p>
 			<div class="field">
-				<label>Choose a csv file to upload</label>
+				<label>Επιλογή αρχείου csv</label>
 				<input type="file" id="csv-file" name="csv-file"/>
 			</div>
 		</section>

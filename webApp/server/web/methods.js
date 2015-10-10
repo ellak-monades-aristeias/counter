@@ -1,15 +1,18 @@
 Meteor.methods({
 
 	'counters.insert': function(opts) {
-
 		var role = opts.roles[0];
 		var mail = opts.emails[0].address;
-		var pass = '123456b:'
+		var pass = Meteor.settings.DEFAULT_COUNTER_PASS;
 
 		var id = Accounts.createUser({
 			username: opts.username,
 			email: mail,
-			password: pass
+			password: pass,
+            profile: {
+                firstName : opts.profile.firstName,
+                lastName: opts.profile.lastName
+            }			
 		});
 
 		if (opts.roles.length > 0) {
