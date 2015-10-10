@@ -26,12 +26,13 @@ Template.ClocksAll.events({
 					console.log(c);
 					var obj = {
 						hydroMeter: c[0],
-						name: c[1],
-						address: c[2],
-						topiki:c[3],
-						pathcode: c[4],
+						firstname: c[1],
+						lastname: c[2],
+						address: c[3],
+						topiki: c[4],
 						timologio: c[5],	
-						barcode: c[6]	
+						pathcode: c[6],
+						barcode: c[7]	
 					}
 					Clocks.insert(obj);
 				});

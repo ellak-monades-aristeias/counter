@@ -1,0 +1,10 @@
+{
+  "public": {
+  	"TITLE": "example title"
+  },
+	"ADMIN_MAIL": "example@test.com",
+	"ADMIN_PASS": "apassword",
+ 	"ADMIN_FIRST": "example",
+	"ADMIN_LAST": "test",
+	"DEFAULT_COUNTER_PASS": "bpassword"
+}

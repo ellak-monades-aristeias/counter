@@ -86,7 +86,7 @@ Clocks.helpers({
     var m = Measurements.findOne({hydroMeter: this.hydroMeter},{sort: {createdAt: -1}});
     return m;
   },
-  name: function () {
+  fullname: function () {
     var firstandlast = this.firstname + " " + this.lastname;
     return this.patronymo ? firstandlast + " " + this.patronymo : firstandlast;
   }
@@ -140,7 +140,7 @@ TabularTables.Clocks = new Tabular.Table({
   collection: Clocks,
   columns: [
     {data: "hydroMeter", title: "Υδρόμετρο"},
-    {data: "name()", title: "Ονοματεπώνυμο/Υπόχρεος"},
+    {data: "fullname()", title: "Ονοματεπώνυμο/Υπόχρεος"},
     {data: "address", title: "Διεύθυνση"},
     {data: "topiki", title: "Τ.Π.(Τοπική Κοινότητα)"},
     {data: "pathcode", title: "Κωδικός Διαδρομής"},
@@ -161,7 +161,7 @@ TabularTables.ClocksForPaths = new Tabular.Table({
   collection: Clocks,
   columns: [
     {data: "hydroMeter", title: "Υδρόμετρο"},
-    {data: "name()", title: "Ονοματεπώνυμο/Υπόχρεος"},
+    {data: "fullname()", title: "Ονοματεπώνυμο/Υπόχρεος"},
     {data: "address", title: "Διεύθυνση"},
     {data: "topiki", title: "Τ.Π.(Τοπική Κοινότητα)"},
     {data: "pathcode", title: "Κωδικός Διαδρομής"},    
@@ -179,7 +179,7 @@ TabularTables.ClocksForPathsEdit = new Tabular.Table({
   collection: Clocks,
   columns: [
     {data: "hydroMeter", title: "Υδρόμετρο"},
-    {data: "name()", title: "Ονοματεπώνυμο/Υπόχρεος"},
+    {data: "fullname()", title: "Ονοματεπώνυμο/Υπόχρεος"},
     {data: "address", title: "Διεύθυνση"},
     {data: "topiki", title: "Τ.Π.(Τοπική Κοινότητα)"},
     {data: "pathcode", title: "Κωδικός Διαδρομής"},    
@@ -190,31 +190,3 @@ TabularTables.ClocksForPathsEdit = new Tabular.Table({
     return userId || Roles.userIsInRole(userId,['admin']);
   }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

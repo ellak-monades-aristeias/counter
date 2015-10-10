@@ -53,6 +53,15 @@ Meteor.publish('comments.one', function (id) {
     }
 });
 
+Meteor.publish('counters.one', function (id) {
+    check(id,String);
+    if (this.userId || Roles.userIsInRole(this.userId,['admin'])) {
+        return Meteor.users.find({_id: id},{fields: {profile: 1, username:1, emails:1, roles:1} });
+    } else {
+        this.ready();
+    }
+});
+
 
 
 
