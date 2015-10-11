@@ -13,7 +13,7 @@ Comments.attachSchema(new SimpleSchema({
     	autoform: {
     		omit: true
     	}
-    },
+    },    
     createdAt: {
     	type: Date,
     	optional: true,
@@ -28,15 +28,20 @@ Comments.helpers({
   getAuthor: function () {
     var user = Meteor.users.findOne({_id:this.author});
     return user;
-  }
+  },
+  getAuthorUsername: function () {
+    var user = Meteor.users.findOne({_id:this.author});
+    return user && user.username;
+  }  
 });
 
 Comments.before.insert(function (userId, doc) {
   doc.createdAt = Date.now();
-  doc.author = userId;  
+  doc.author = userId; 
 });
 
 if (Meteor.isServer) {
+  //deny all, all operations done with methods
   Comments.deny({
     insert: function (userId, doc) {
       return true;
@@ -79,7 +84,7 @@ TabularTables.Comments = new Tabular.Table({
         return moment(val).format('DD/MM/YYYY, hh:mm a');
       }
     },        
-    {data: "getAuthor()", title: "Χρήστης"},
+    {data: "getAuthorUsername()", title: "Χρήστης"},
     {data: "text", title: "Σχόλιο"},
     {tmpl: Meteor.isClient && Template.detailsCommentsBtn}
   ],

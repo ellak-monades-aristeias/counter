@@ -13,7 +13,7 @@ Comments.attachSchema(new SimpleSchema({
     	autoform: {
     		omit: true
     	}
-    },
+    },    
     createdAt: {
     	type: Date,
     	optional: true,
@@ -32,7 +32,6 @@ Meteor.methods({
   'comments.insert': function(text) {
     check(text, String);
     return Comments.insert({text: text});
-
   }
 });
 

@@ -11,22 +11,15 @@ Measurements.after.insert(function (userId, doc) {
   	}
 });
 
-
-
 Meteor.methods({
 	'measurements.insert': function (opts) {
-
 		return Measurements.insert(opts);
 	},
 	'measurements.insert.failure': function (opts) {
-
-		return Measurements.insert(opts);		
+		return Measurements.insert(opts);
 	}	
 });
 
-
-
 // Offline
 if (Meteor.isCordova) Ground.Collection(Measurements);
-
 if ( Meteor.isClient ) Ground.methodResume(['measurements.insert', 'measurements.insert.failure']);

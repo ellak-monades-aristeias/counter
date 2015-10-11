@@ -39,7 +39,6 @@ Router.route('/measure/:_id', {
   }
 });
 
-
 Router.route('/comments', {
   name: 'comments',
   action: function () {
@@ -68,10 +67,9 @@ Router.route('/user', {
   }
 });
 
-
-// Router.plugin('ensureSignedIn', {
-//     except: ['home', 'atSignIn']
-// });
+Router.plugin('ensureSignedIn', {
+    except: ['home', 'atSignIn']
+});
 
 
 

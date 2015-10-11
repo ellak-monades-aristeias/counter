@@ -13,12 +13,6 @@ Clocks.attachSchema(new SimpleSchema({
 		optional: false,
 		max: 60
 	},
-	patronymo: {
-		type: String,
-		label: "Πατρώνυμο",
-		optional: true,
-		max: 60
-	},
 	tel: {
 		type: String,
 		label: "Τηλέφωνο",
@@ -78,9 +72,25 @@ Clocks.attachSchema(new SimpleSchema({
 		    {label: "ΕΠΑΓΓΕΛΜΑΤΙΚΟ", value: "ΕΠΑΓΓΕΛΜΑΤΙΚΟ"}
 		  ]
 		}
-	}	
+	},
+    createdAt: {
+    	type: Date,
+    	optional: true,
+    	autoform: {
+    		omit: true
+    	}
+    }	
 }));
 
+Clocks.before.insert(function (userId, doc) {
+  doc.createdAt = Date.now();
+});
+
+Clocks.helpers({
+  fullname: function () {
+    return this.firstname + " " + this.lastname;
+  }
+});
 
 Meteor.methods({
   'clocks.insert': function(opts) {

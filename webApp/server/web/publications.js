@@ -27,9 +27,12 @@ Meteor.publish('ClocksforMap', function(bottomLeft, topRight) {
 Meteor.publish('measurements.one', function (id) {
     check(id,String);
     var clockId = Measurements.findOne({_id: id}).getClock()._id;
+    var counterId = Measurements.findOne({_id: id}).getCounter()._id;
 
     if (this.userId || Roles.userIsInRole(this.userId,['admin'])) {
-        return [ Measurements.find({_id: id}), Clocks.find({_id: clockId}) ]
+        return [ Measurements.find({_id: id}),
+        Clocks.find({_id: clockId}),
+        Meteor.users.find({_id: counterId})]
     } else {
         this.ready();
     }
@@ -46,12 +49,22 @@ Meteor.publish('paths.one', function (id) {
 
 Meteor.publish('comments.one', function (id) {
     check(id,String);
+    var authorId = Comments.findOne({_id: id}).getAuthor()._id;
     if (this.userId || Roles.userIsInRole(this.userId,['admin'])) {
-        return Comments.find({_id: id});
+        return [ Comments.find({_id: id}), Meteor.users.find({_id: authorId},{fields: {profile: 1, username:1} }) ];
     } else {
         this.ready();
     }
 });
+
+Meteor.publish('comments.all', function () {
+    if (this.userId || Roles.userIsInRole(this.userId,['admin'])) {
+        return Meteor.users.find({},{fields: {username:1} });
+    } else {
+        this.ready();
+    }
+});
+
 
 Meteor.publish('counters.one', function (id) {
     check(id,String);
