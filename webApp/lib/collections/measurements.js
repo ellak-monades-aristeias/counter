@@ -36,7 +36,7 @@ if (Meteor.isServer) {
     },
 
     update: function (userId, doc, fieldNames, modifier) {
-      return false;
+      return true;
     },
 
     remove: function (userId, doc) {

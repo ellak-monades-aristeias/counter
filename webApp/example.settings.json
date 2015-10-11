@@ -3,6 +3,7 @@
   	"TITLE": "example title"
   },
 	"ADMIN_MAIL": "example@test.com",
+	"ADMIN_USERNAME" : "exmpl",
 	"ADMIN_PASS": "apassword",
  	"ADMIN_FIRST": "example",
 	"ADMIN_LAST": "test",

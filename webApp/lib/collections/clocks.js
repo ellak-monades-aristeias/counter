@@ -13,12 +13,6 @@ Clocks.attachSchema(new SimpleSchema({
     optional: false,
     max: 60
   },
-  patronymo: {
-    type: String,
-    label: "Πατρώνυμο",
-    optional: true,
-    max: 60
-  },
 	tel: {
 		type: String,
 		label: "Τηλέφωνο",
@@ -78,8 +72,19 @@ Clocks.attachSchema(new SimpleSchema({
 		    {label: "ΕΠΑΓΓΕΛΜΑΤΙΚΟ", value: "ΕΠΑΓΓΕΛΜΑΤΙΚΟ"}
 		  ]
 		}
-	}
+	},
+  createdAt: {
+    type: Date,
+    optional: true,
+    autoform: {
+      omit: true
+    }
+  }  
 }));
+
+Clocks.before.insert(function (userId, doc) {
+  doc.createdAt = Date.now();
+});
 
 Clocks.helpers({
   getlastMeasurement : function () {
@@ -87,10 +92,8 @@ Clocks.helpers({
     return m;
   },
   fullname: function () {
-    var firstandlast = this.firstname + " " + this.lastname;
-    return this.patronymo ? firstandlast + " " + this.patronymo : firstandlast;
+    return this.firstname + " " + this.lastname;
   }
-
 });
 
 
@@ -148,7 +151,7 @@ TabularTables.Clocks = new Tabular.Table({
     {tmpl: Meteor.isClient && Template.detailsClockBtn},
     {tmpl: Meteor.isClient && Template.editClockBtn}
   ],
-  extraFields: ['firstname','lastname','patronymo'],
+  extraFields: ['firstname','lastname'],
   allow: function(userId) {
     return userId || Roles.userIsInRole(userId,['admin']);
   }
@@ -167,7 +170,7 @@ TabularTables.ClocksForPaths = new Tabular.Table({
     {data: "pathcode", title: "Κωδικός Διαδρομής"},    
     {tmpl: Meteor.isClient && Template.addClockBtn}
   ],
-  extraFields: ['firstname','lastname','patronymo'],
+  extraFields: ['firstname','lastname'],
   allow: function(userId) {
     return userId || Roles.userIsInRole(userId,['admin']);
   }
@@ -185,7 +188,7 @@ TabularTables.ClocksForPathsEdit = new Tabular.Table({
     {data: "pathcode", title: "Κωδικός Διαδρομής"},    
     {tmpl: Meteor.isClient && Template.removeClockBtn}
   ],
-  extraFields: ['firstname','lastname','patronymo'],
+  extraFields: ['firstname','lastname'],
   allow: function(userId) {
     return userId || Roles.userIsInRole(userId,['admin']);
   }

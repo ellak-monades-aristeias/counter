@@ -1,26 +1,9 @@
-Template.ClocksMap.onRendered(function() {
-
-
-
-});
-
 Template.ClocksMap.helpers({
 	geolocationError: function() {
 		var error = Geolocation.error();
 		return error && error.message;
 	}	
 });
-
-/// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-/// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-
 
 
 Template.ClocksMap.onCreated(function() {
@@ -112,38 +95,3 @@ Template.marker.helpers({
     return this.firstname + ' ' + this.lastname;
   }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

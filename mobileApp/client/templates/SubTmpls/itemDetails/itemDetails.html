@@ -1,43 +1,43 @@
 <template name="itemDetails">
-		<div class="column">
-			<div class="ui padded basic raised segment">
-				<h3 class="ui header">
-					{{name}}
+	<div class="grey column">
+		<div class="ui padded basic raised segment">
+			<h3 class="ui header">
+				{{fullname}}
+				<div class="sub header">
+					<i class="user icon"></i>
+					Όνομα
+				</div>
+			</h3>
+			<h3 class="ui header">
+				{{hydroMeter}}
+				<div class="sub header">
+					<i class="clock icon"></i>
+					Αριθμός υδρόμετρου
+				</div>
+			</h3>
+			{{#if location}}
+				<h3 class="ui header"> 
+					{{itemSavedLocation}}
 					<div class="sub header">
-						<i class="user icon"></i>
-						Όνομα
+					<i class="marker icon"></i>
+						Τοποθεσία, Αποθηκευμένη
 					</div>
 				</h3>
-				<h3 class="ui header">
-					{{hydroMeter}}
-					<div class="sub header">
-						<i class="clock icon"></i>
-						Αριθμός υδρόμετρου
-					</div>
-				</h3>
-				{{#if location}}
-					<h3 class="ui header"> 
-						{{itemSavedLocation}}
-						<div class="sub header">
-						<i class="marker icon"></i>
-							Τοποθεσία, Αποθηκευμένη
-						</div>
+			{{else}}
+				{{#if geolocationError}}
+					<h3 class="ui header">
+						{{geolocationError}}
+						<div class="sub header">Τοποθεσία</div>
 					</h3>
 				{{else}}
-					{{#if geolocationError}}
-						<h3 class="ui header">
-							{{geolocationError}}
-							<div class="sub header">Τοποθεσία</div>
-						</h3>
-					{{else}}
-						<h3 class="ui header">
-							 {{loc.lat}},{{loc.lng}}
-							<div class="sub header">Τοποθεσία</div>
-						</h3>
-					{{/if}}
+					<h3 class="ui header">
+						 {{loc.lat}},{{loc.lng}}
+						<div class="sub header">Τοποθεσία</div>
+					</h3>
 				{{/if}}
-			</div>
-		</div>	
+			{{/if}}
+		</div>
+	</div>	
 </template>
 
 
