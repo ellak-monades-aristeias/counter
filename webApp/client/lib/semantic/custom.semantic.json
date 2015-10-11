@@ -1,7 +1,7 @@
 {
   "definitions": {
     "accordion": true,
-    "ad": true,
+    "ad": false,
     "api": true,
     "breadcrumb": true,
     "button": true,
@@ -28,8 +28,8 @@
     "loader": true,
     "menu": true,
     "message": true,
-    "modal": true,
-    "nag": true,
+    "modal": false,
+    "nag": false,
     "popup": true,
     "progress": true,
     "rail": true,
