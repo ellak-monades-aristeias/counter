@@ -11,6 +11,14 @@ Template.Path.helpers({
 		var id = Router.current().params._id;
 		return Paths.findOne({_id: id});
 	},
+	perPage: function () {
+		//filter only those in this path,
+		var id = Router.current().params._id;
+		var pth = Paths.findOne({_id: id});
+		var clocks = pth.clocks || [];
+		var instance = Template.instance		
+		return Clocks.find({_id: {$in: clocks}},{sort: {pathcode: 1}, limit: Template.instance().limit.get() }).count() > PER_PAGE;
+	},
 	clocks: function() {
 		//filter only those in this path,
 		var id = Router.current().params._id;

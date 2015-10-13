@@ -36,16 +36,18 @@
 						</div>
 						<div class="content">
 							<div class="header">{{pathcode}}</div>
-							<div class="header">{{pathcode}}. {{firstname}} {{lastname}}</div>
+							<div class="header">{{firstname}} {{lastname}}</div>
 							<div class="description">Αριθμός υδρόμετρου: {{hydroMeter}}</div>
 						</div>
 					</a>			
 				{{/each}}
 			</div>
 		</div>
-		<div class="ui basic segment">
-			<button data-action="loadmore" class="ui big fluid blue button">περισσότερα</button>
-		</div>
+		{{#if perPage}}
+			<div class="ui basic segment">
+				<button data-action="loadmore" class="ui big fluid blue button">περισσότερα</button>
+			</div>
+		{{/if}}
 
 	{{else}}
 		<section class="ui padded basic segment">
