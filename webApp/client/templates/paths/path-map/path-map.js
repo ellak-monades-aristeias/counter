@@ -1,4 +1,4 @@
-Template.ClocksMap.helpers({
+Template.PathMap.helpers({
 	geolocationError: function() {
 		var error = Geolocation.error();
 		return error && error.message;
@@ -6,7 +6,7 @@ Template.ClocksMap.helpers({
 });
 
 
-Template.ClocksMap.onCreated(function() {
+Template.PathMap.onCreated(function() {
   L.Icon.Default.imagePath = 'packages/bevanhunt_leaflet/images';
   this.mapRendered = false;
   this.bottomLeft = new ReactiveVar;
@@ -23,12 +23,13 @@ Template.ClocksMap.onCreated(function() {
     }    
   };
   var template = this;
+  var pathId = Router.current().params._id;
   template.autorun(function() {
-    template.subscribe('ClocksforMap', template.bottomLeft.get(), template.topRight.get());
+    template.subscribe('ClocksforPathMap', pathId, template.bottomLeft.get(), template.topRight.get());
   });
 });
 
-Template.ClocksMap.onRendered(function() {
+Template.PathMap.onRendered(function() {
   var template = this;
   template.autorun(function() {
     if (Geolocation.latLng()) {
@@ -36,7 +37,7 @@ Template.ClocksMap.onRendered(function() {
       longitude = Geolocation.latLng().lng;
       
       if (!template.mapRendered) {
-        template.map = L.map('map',{
+        template.map = L.map('pathMap',{
           scrollWheelZoom: false,
           touchZoom : false
         }).setView([latitude, longitude], 15);
@@ -54,7 +55,7 @@ Template.ClocksMap.onRendered(function() {
   });
 });
 
-Template.ClocksMap.onRendered(function() {
+Template.PathMap.onRendered(function() {
   var template = this;
 
   template.autorun(function() {
@@ -95,7 +96,7 @@ var createIcon = function() {
 }
 
 
-Template.marker.helpers({
+Template.pathMarker.helpers({
   clockname: function () {
     return this.firstname + ' ' + this.lastname;
   }

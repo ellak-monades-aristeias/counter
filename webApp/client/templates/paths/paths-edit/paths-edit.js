@@ -20,5 +20,10 @@ Template.PathsEdit.events({
 		} else {
 			tmpl.editPathName.set(true);
 		}
-	}	
+	},
+	'click [data-action="gotomap"]': function(evt, tmpl) {
+		evt.preventDefault();
+		console.log(this.name);
+		Router.go('paths.map', {_id: this._id});
+	}
 });
