@@ -53,12 +53,12 @@ Router.route('/newclock', {
   }
 });
 
-Router.route('/help', {
-  name: 'help',
-  action: function () {
-    this.render('Help');
-  }
-});
+// Router.route('/help', {
+//   name: 'help',
+//   action: function () {
+//     this.render('Help');
+//   }
+// });
 
 Router.route('/user', {
   name: 'user',
