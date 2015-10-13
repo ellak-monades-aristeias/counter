@@ -1,4 +1,4 @@
-<template name="PathsEdit">
+<!-- <template name="PathsEdit">
 	<section class="ui vertical basic segment">
 		<div class="ui container">
 				<h1 class="ui header">
@@ -17,4 +17,37 @@
 			{{> tabular table=TabularTables.ClocksForPathsEdit selector=selector class="table table-responsive"}}
 		</div>		
 	</section>
+</template>
+
+ -->
+
+ <template name="PathsEdit">
+	<section class="ui vertical basic segment">
+		<div class="ui container">
+				<h1 class="ui header">
+					<a data-action="editPathName">
+						<i class="edit green icon"></i>
+					</a>
+					{{name}}  	
+				</h1>			
+			{{#if editPathName}}
+				<div class="ui basic segment">
+					{{> quickForm collection="Paths" doc=this id="updatePathNameForm" type="update"}}
+				</div>			
+			{{/if}}
+		</div>		
+	</section>
+	<section class="ui basic no-padd right aligned segment">
+		<button data-action="gotomap" class="ui icon green big basic button">
+			<i class="map icon"></i>
+			Χάρτης
+		</button>
+	</section>
+	<section class="ui vertical segment">		
+		<div class="ui container">
+			<div class="ui raised overflow segment">
+				{{> tabular table=TabularTables.ClocksForPathsEdit selector=selector class="table table-responsive responsive"}}
+			</div>
+		</div>
+	</section>	
 </template>

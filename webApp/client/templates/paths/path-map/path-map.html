@@ -1,4 +1,4 @@
-<template name="ClocksMap">
+<template name="PathMap">
 
 {{#if geolocationError}}
 
@@ -15,7 +15,7 @@
 	<section class="ui vertical segment">		
 		<div class="ui container">
 			<div class="ui raised segment">
-				<div id="map">
+				<div id="pathMap">
 				</div>
 			</div>
 		</div>
@@ -23,7 +23,7 @@
 </template>
 
 
-<template name="marker">
+<template name="pathMarker">
   <div class="ui basic section">
   		<div class="ui list">
   			<div class="item">{{clockname}}</div>

@@ -88,6 +88,13 @@ Router.route('/paths/:_id/add', {
   where: 'client'
 });
 
+Router.route('/paths/:_id/map', {
+  name: 'paths.map',
+  action: function () {
+    this.render('PathMap');
+  }  
+});
+
 Router.route('/measurements', {
   name: 'measurements.all',
   action: function () {
