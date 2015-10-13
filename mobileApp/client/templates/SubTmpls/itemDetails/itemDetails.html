@@ -19,7 +19,7 @@
 				<h3 class="ui header"> 
 					{{itemSavedLocation}}
 					<div class="sub header">
-					<i class="marker icon"></i>
+						<i class="marker icon"></i>
 						Τοποθεσία, Αποθηκευμένη
 					</div>
 				</h3>
@@ -32,7 +32,10 @@
 				{{else}}
 					<h3 class="ui header">
 						 {{loc.lat}},{{loc.lng}}
-						<div class="sub header">Τοποθεσία</div>
+						<div class="sub header">
+							<i class="marker icon"></i>
+							Τοποθεσία
+						</div>
 					</h3>
 				{{/if}}
 			{{/if}}

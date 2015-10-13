@@ -25,14 +25,15 @@ Template.ClocksAll.events({
 				_.each(clocksArray,function(c) {
 					console.log(c);
 					var obj = {
-						hydroMeter: c[0],
-						firstname: c[1],
-						lastname: c[2],
+						firstname: c[0],
+						lastname: c[1],
+						hydroMeter: c[2],
 						address: c[3],
 						topiki: c[4],
-						timologio: c[5],	
-						pathcode: c[6],
-						barcode: c[7]	
+						tel: c[5],
+						timologio: c[6],	
+						pathcode: c[7],
+						barcode: c[8]	
 					}
 					Clocks.insert(obj);
 				});

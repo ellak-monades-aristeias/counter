@@ -2,7 +2,7 @@ App.info({
   name: 'Counter',
   description: 'App for public water utilities ellak.',
   author: 'me',
-  version: '0.0.7'
+  version: '0.0.5'
 });
 
 // App.icons({
