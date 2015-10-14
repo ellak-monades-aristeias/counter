@@ -1,4 +1,4 @@
-# countrer
+# counter
 *Εφαρμογή υδρομέτρησης με τη χρήση κινητού τηλεφώνου (android)*
 
 Αναλυτική περιγραφή στο [wiki](https://github.com/ellak-monades-aristeias/counter/wiki) .
