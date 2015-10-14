@@ -2,11 +2,18 @@ Comments = new Mongo.Collection('comments');
 
 Comments.attachSchema(new SimpleSchema({
     text: {
-        type: String,
-        label: "Σχόλιο",
-        optional:false,
-        max: 300
+      type: String,
+      label: "Σχόλιο",
+      optional:false,
+      max: 300
     },
+    photo: {
+      type: String,
+      optional: true,
+      autoform: {
+        omit: true
+      }
+    },    
     author: {
     	type: String,
     	optional: true,
@@ -59,11 +66,11 @@ if (Meteor.isServer) {
 
 if (Meteor.isServer) {
 
-  Meteor.methods({  
-    'comments.insert': function(text) {
-      check(text, String);
-      return Comments.insert({text: text});
-    },
+  Meteor.methods({
+    'comments.insert': function(opts) {
+      check(opts.text, String);
+      return Comments.insert(opts);
+    },    
     'comments.delete' : function (commentId) {
       check(text, String);
       return Comments.remove(commentId);

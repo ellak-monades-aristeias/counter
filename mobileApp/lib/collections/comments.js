@@ -7,13 +7,20 @@ Comments.attachSchema(new SimpleSchema({
         optional:false,
         max: 300
     },
+    photo: {
+        type: String,
+        optional: true,
+        autoform: {
+            omit: true
+        }
+    },
     author: {
-    	type: String,
-    	optional: true,
-    	autoform: {
-    		omit: true
-    	}
-    },    
+        type: String,
+        optional: true,
+        autoform: {
+            omit: true
+        }
+    },
     createdAt: {
     	type: Date,
     	optional: true,
@@ -29,9 +36,9 @@ Comments.before.insert(function (userId, doc) {
 });
 
 Meteor.methods({
-  'comments.insert': function(text) {
-    check(text, String);
-    return Comments.insert({text: text});
+  'comments.insert': function(opts) {
+    check(opts.text, String);
+    return Comments.insert(opts);
   }
 });
 
