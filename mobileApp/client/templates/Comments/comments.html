@@ -28,6 +28,19 @@
 					<label>Σχόλιο</label>
 					<textarea name="text" rows=6></textarea>
 				</div>
+				<div class="field">
+					<button class="ui basic button" data-action="photo">
+						<i class="photo icon"></i>
+						Λήψη φωτογραφίας
+					</button>
+					{{#if photo}}
+						<div class="ui fluid segment">
+							<div class="ui image">
+								<img src="{{photo}}" />
+							</div>
+						</div>
+					{{/if}}
+				</div>				
 				<div class="ui hidden divider"></div>
 				<button type="submit" class="ui big submit blue button">Αποστολή</button>
 			</form>

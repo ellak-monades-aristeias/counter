@@ -24,11 +24,58 @@
 						</div>
 					{{else}}
 						<div class="column">
-							<div class="ui basic segment">
-								<div class="sub header">Something: </div>
-								<h3 class="ui header">
-									something related
-								</h3>
+							<div class="ui basic center aligned padded segment">
+								<div class="ui icon header">
+									<i class="users icon"></i>
+									<div class="content">
+										<!-- Καταμετρητές -->
+										<a href="{{pathFor 'counters.all'}}">Καταμετρητές</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="column">
+							<div class="ui basic center aligned padded segment">
+								<div class="ui icon header">
+									<i class="dashboard icon"></i>
+									<div class="content">
+										<!-- Καταμετρητές -->
+										<a href="{{pathFor 'clocks.all'}}">Υδρόμετρα</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="column">
+							<div class="ui basic center aligned padded segment">
+								<div class="ui icon header">
+									<i class="fork icon"></i>
+									<div class="content">
+										<!-- Καταμετρητές -->
+										<a href="{{pathFor 'paths.all'}}">Δρομολόγια</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="column">
+							<div class="ui basic center aligned padded segment">
+								<div class="ui icon header">
+									<i class="bar chart icon"></i>
+									<div class="content">
+										<!-- Καταμετρητές -->
+										<a href="{{pathFor 'measurements.all'}}">Μετρήσεις</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="column">
+							<div class="ui basic center aligned padded segment">
+								<div class="ui icon header">
+									<i class="comment outline icon"></i>
+									<div class="content">
+										<!-- Καταμετρητές -->
+										<a href="{{pathFor 'comments'}}">Σχόλια</a>
+									</div>
+								</div>
 							</div>
 						</div>
 					{{/unless}}		
