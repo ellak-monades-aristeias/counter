@@ -2,6 +2,17 @@
 *Εφαρμογή υδρομέτρησης με τη χρήση κινητού τηλεφώνου (android)*
 
 Αναλυτική περιγραφή στο [wiki](https://github.com/ellak-monades-aristeias/counter/wiki) .
+<img src="http://levadia.gr/wp-content/uploads/2014/05/logocounter.png">
+
+* [Η ΙΔΕΑ ΜΑΣ](https://github.com/ellak-monades-aristeias/counter/wiki/%CE%95%CF%86%CE%B1%CF%81%CE%BC%CE%BF%CE%B3%CE%AE%CF%82-%CF%85%CE%B4%CF%81%CE%BF%CE%BC%CE%AD%CF%84%CF%81%CE%B7%CF%83%CE%B7%CF%82-%CE%BC%CE%B5-%CF%84%CE%B7%CE%BD-%CF%87%CF%81%CE%AE%CF%83%CE%B7-%CE%BA%CE%B9%CE%BD%CE%B7%CF%84%CE%BF%CF%8D-%CF%84%CE%B7%CE%BB%CE%B5%CF%86%CF%8E%CE%BD%CE%BF%CF%85-(android))
+* [ΠΛΕΟΝΕΚΤΗΜΑΤΑ](https://github.com/ellak-monades-aristeias/counter/wiki/%CE%A0%CE%BB%CE%B5%CE%BF%CE%BD%CE%B5%CE%BA%CF%84%CE%AE%CE%BC%CE%B1%CF%84%CE%B1)
+* [ΠΕΡΙΓΡΑΦΗ ΕΦΑΡΜΟΓΗΣ](https://github.com/ellak-monades-aristeias/counter/wiki/%CE%A0%CE%B5%CF%81%CE%B9%CE%B3%CF%81%CE%B1%CF%86%CE%AE-%CE%B5%CF%86%CE%B1%CF%81%CE%BC%CE%BF%CE%B3%CE%AE%CF%82)
+* [ΛΕΙΤΟΥΡΓΙΑ](https://github.com/ellak-monades-aristeias/counter/wiki/%CE%9B%CE%B5%CE%B9%CF%84%CE%BF%CF%85%CF%81%CE%B3%CE%AF%CE%B5%CF%82)
+* [ΣΕ ΠΟΙΟΥΣ ΑΠΕΥΘΥΝΕΤΑΙ Η ΕΦΑΡΜΟΓΗ](https://github.com/ellak-monades-aristeias/counter/wiki/%CE%A3%CE%B5-%CF%80%CE%BF%CE%B9%CE%BF%CF%8D%CF%82-%CE%B1%CF%80%CE%B5%CF%85%CE%B8%CF%8D%CE%BD%CE%B5%CF%84%CE%B1%CE%B9-%CE%B7-%CE%B5%CF%86%CE%B1%CF%81%CE%BC%CE%BF%CE%B3%CE%AE)
+* [ΜΕΛΛΟΝΤΙΚΕΣ ΕΠΕΚΤΑΣΕΙΣ](https://github.com/ellak-monades-aristeias/counter/wiki/%CE%9C%CE%B5%CE%BB%CE%BB%CE%BF%CE%BD%CF%84%CE%B9%CE%BA%CE%AD%CF%82-%CE%B5%CF%80%CE%B5%CE%BA%CF%84%CE%AC%CF%83%CE%B5%CE%B9%CF%82)
+* [ΕΓΚΑΤΑΣΤΑΣΗ](https://github.com/ellak-monades-aristeias/counter/wiki/%CE%99nstallation)
+
+##[Οδηγός Εφαρμογής ](https://github.com/ellak-monades-aristeias/counter/wiki/%CE%9F%CE%B4%CE%B7%CE%B3%CF%8C%CF%82-%CE%95%CF%86%CE%B1%CF%81%CE%BC%CE%BF%CE%B3%CE%AE%CF%82)
 
 ## software stuck
 
