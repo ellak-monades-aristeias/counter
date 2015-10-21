@@ -242,3 +242,4 @@ H Ευρωπαϊκή Επιτροπή δύναται να δηµοσιεύσει
 - Common Public License v. 1.0
 - Eclipse Public License v. 1.0
 - Cecill v. 2.0 
+το περιεχόμενο δίνεται με άδεια  cretive commons
