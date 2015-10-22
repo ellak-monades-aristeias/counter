@@ -14,9 +14,9 @@
 
 ##[Οδηγός Εφαρμογής ](https://github.com/ellak-monades-aristeias/counter/wiki/%CE%9F%CE%B4%CE%B7%CE%B3%CF%8C%CF%82-%CE%95%CF%86%CE%B1%CF%81%CE%BC%CE%BF%CE%B3%CE%AE%CF%82)
 
-## software stuck
+## software stack
 
-To project ειναι βασισμένο αποκλειστηκα στο [Meteor](https://www.meteor.com/) JavaScript App Platform
+To project είναι βασισμένο αποκλειστηκά στο [Meteor](https://www.meteor.com/) JavaScript App Platform
 
 ## Prerequisites
 
@@ -73,7 +73,7 @@ From within the mobileApp directory run:
 meteor build --server=http://nameofyourapp.meteor.com ../my-build-folder
 ```
 
-The build folder looks this
+The build folder looks like this
 
 ![build folder](README-imgs/buildfolder.png)
 
