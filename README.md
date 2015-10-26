@@ -2,7 +2,7 @@
 *Εφαρμογή υδρομέτρησης με τη χρήση κινητού τηλεφώνου (android)*
 
 Αναλυτική περιγραφή στο [wiki](https://github.com/ellak-monades-aristeias/counter/wiki) .
-<img src="http://levadia.gr/wp-content/uploads/2014/05/logocounter.png">
+<img src="https://github.com/ellak-monades-aristeias/counter/blob/master/mobileApp/resources/splash/splash-320x200.png?raw=true">
 
 * [Η ΙΔΕΑ ΜΑΣ](https://github.com/ellak-monades-aristeias/counter/wiki/%CE%95%CF%86%CE%B1%CF%81%CE%BC%CE%BF%CE%B3%CE%AE%CF%82-%CF%85%CE%B4%CF%81%CE%BF%CE%BC%CE%AD%CF%84%CF%81%CE%B7%CF%83%CE%B7%CF%82-%CE%BC%CE%B5-%CF%84%CE%B7%CE%BD-%CF%87%CF%81%CE%AE%CF%83%CE%B7-%CE%BA%CE%B9%CE%BD%CE%B7%CF%84%CE%BF%CF%8D-%CF%84%CE%B7%CE%BB%CE%B5%CF%86%CF%8E%CE%BD%CE%BF%CF%85-(android))
 * [ΠΛΕΟΝΕΚΤΗΜΑΤΑ](https://github.com/ellak-monades-aristeias/counter/wiki/%CE%A0%CE%BB%CE%B5%CE%BF%CE%BD%CE%B5%CE%BA%CF%84%CE%AE%CE%BC%CE%B1%CF%84%CE%B1)
